@@ -6131,7 +6131,14 @@ body.custom-background {
 	color:#939393!important;
 }
 
+/*
 .zerif-copyright-box {
+	width: 100%;
+    color: #666;
+}
+*/
+.zerif-copyright-box {
+	visibility: hidden;
 	width: 100%;
     color: #666;
 }
