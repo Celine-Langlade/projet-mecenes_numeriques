@@ -205,15 +205,6 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 	/* RIBBON WITH BOTTOM BUTTON */
 
 	get_template_part( 'sections/ribbon_with_bottom_button' );
-	/* OUR TEAM */
-
-	$zerif_ourteam_show = get_theme_mod('zerif_ourteam_show');
-
-	if( isset($zerif_ourteam_show) && $zerif_ourteam_show != 1 ):
-
-		get_template_part( 'sections/our_team' );
-
-	endif;
 
 	/* TESTIMONIALS */
 
