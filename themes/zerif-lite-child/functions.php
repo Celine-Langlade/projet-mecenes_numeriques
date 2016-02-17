@@ -26,6 +26,16 @@ add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 if ( function_exists('register_sidebar') ) {
 
     register_sidebar(array(
+		'name' => __( 'slider', 'lmdn' ),
+		'id' => 'slider',
+		'description' => __( 'Widget de slider', 'lmdn'),
+		'before_widget' => '<div class="widget_slider">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>', 
+	) );
+
+    register_sidebar(array(
 		'name' => __( 'defiscalise', 'lmdn' ),
 		'id' => 'defiscalise',
 		'description' => __( 'Widget de defiscalise', 'lmdn'),
@@ -34,4 +44,5 @@ if ( function_exists('register_sidebar') ) {
 		'before_title' => '<h3>',
 		'after_title' => '</h3>', 
 	) );
+
 }
