@@ -1,0 +1,19 @@
+/*
+ Theme Name:   Zerif Lite Child
+Theme URI:     http://themeisle.com/themes/zerif-lite/
+ Description:  Zerif Lite Child Theme
+ Author:       WCS
+ Author URI:   http://themeisle.com
+ Template:     zerif-lite
+ Version:      1.8.3.5
+ License:      GNU General Public License version 3
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         black, gray, red, white, one-column, two-columns, right-sidebar,fixed-layout,light,front-page-post-form,full-width-template,rtl-language-support,sticky-post,theme-options,responsive-layout, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, photoblogging
+ Text Domain:  zerif-lite-child
+*/
+
+.zerif-copyright-box {
+	visibility: hidden;
+	width: 100%;
+    color: #666;
+}
