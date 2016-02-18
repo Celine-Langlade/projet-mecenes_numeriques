@@ -93,7 +93,7 @@ wp_head(); ?>
 
 					if(isset($zerif_logo) && $zerif_logo != ""):
 
-						echo '<a href="'.esc_url( home_url( '/#' ) ).'" class="navbar-brand">';
+						echo '<a href="'.esc_url( home_url( '/#home' ) ).'" class="navbar-brand">';
 
 							echo '<img src="'.esc_url( $zerif_logo ).'" alt="'.esc_attr( get_bloginfo('title') ).'">';
 
@@ -101,7 +101,7 @@ wp_head(); ?>
 
 					else:
 
-						echo '<a href="'.esc_url( home_url( '/#' ) ).'" class="navbar-brand">';
+						echo '<a href="'.esc_url( home_url( '/#home' ) ).'" class="navbar-brand">';
 						
 							if( file_exists(get_stylesheet_directory()."/images/logo.png")):
 							
