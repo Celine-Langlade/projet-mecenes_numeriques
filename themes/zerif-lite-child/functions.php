@@ -36,13 +36,13 @@ if ( function_exists('register_sidebar') ) {
 	) );
 
     register_sidebar(array(
-		'name' => __( 'defiscalise', 'lmdn' ),
-		'id' => 'defiscalise',
-		'description' => __( 'Widget de defiscalise', 'lmdn'),
-		'before_widget' => '<section class="widget_defiscalise" id="defiscalise">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2>',
-		'after_title' => '</h2>', 
+		'name' => __( 'dvm', 'lmdn' ),
+		'id' => 'dvm',
+		'description' => __( 'Widget de dvm', 'lmdn'),
+		'before_widget' => '<section class="widget_dvm" id="dvm"><div class="container">',
+		'after_widget' => '</div></section>',
+		'before_title' => '<div class="section-header"><h2 class="white-text">',
+		'after_title' => '</h2></div>', 
 	) );
 
 }
