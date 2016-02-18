@@ -25,7 +25,7 @@ Theme URI:     http://themeisle.com/themes/zerif-lite/
 }
 
 .testimonial {
-	background: #272727 !important;
+	background: #ecf0f1 !important;
 }
 
 
@@ -37,4 +37,14 @@ Theme URI:     http://themeisle.com/themes/zerif-lite/
 	visibility: hidden;
 	width: 100%;
     color: #666;
+}
+
+.about-us .big-intro {
+	font-size: 50px;
+	/* text-align: left; */
+	text-align: center;
+}
+
+.about-us p {
+	font-size: 20px;
 }

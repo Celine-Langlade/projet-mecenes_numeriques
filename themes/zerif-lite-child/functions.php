@@ -21,19 +21,18 @@ function themeslug_enqueue_style() {
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 
 
-
 /* Ajout de la zone widget défiscalisé */
 if ( function_exists('register_sidebar') ) {
 
-    register_sidebar(array(
-		'name' => __( 'slider', 'lmdn' ),
-		'id' => 'slider',
-		'description' => __( 'Widget de slider', 'lmdn'),
-		'before_widget' => '<section class="widget_slider">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2>',
-		'after_title' => '</h2>', 
-	) );
+ // //  register_sidebar(array(
+	// 	'name' => __( 'zoneslider', 'lmdn' ),
+	// 	'id' => 'zoneslider',
+	// 	'description' => __( 'Widget de zoneslider', 'lmdn'),
+	// 	'before_widget' => '<section class="widget_zoneslider">',
+	// 	'after_widget' => '</section>',
+	// 	'before_title' => '<h2>',
+	// 	'after_title' => '</h2>', 
+	// ) );
 
     register_sidebar(array(
 		'name' => __( 'dvm', 'lmdn' ),
