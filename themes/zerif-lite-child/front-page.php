@@ -212,6 +212,12 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 	// endif;
 
+
+	/* SLIDER PROJETS FINI */
+
+	if(is_active_sidebar('slider')){ dynamic_sidebar( 'slider' ) ;}
+
+
 	/* TESTIMONIALS */
 
 	$zerif_testimonials_show = get_theme_mod('zerif_testimonials_show');
