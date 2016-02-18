@@ -233,35 +233,35 @@ function zerif_customize_register( $wp_customize ) {
 		// 	'priority' => 9,
 		// ));
 		
-		// $wp_customize->add_section( 'zerif_general_footer_section' , array(
-		// 	'title' => __( 'Footer Content', 'zerif-lite' ),
-		// 	'priority' => 32,
-		// 	'panel' => 'panel_general'
-		// ));
+		$wp_customize->add_section( 'zerif_general_footer_section' , array(
+			'title' => __( 'Footer Content', 'zerif-lite' ),
+			'priority' => 32,
+			'panel' => 'panel_general'
+		));
 		
 		/* address - ICON */
-		$wp_customize->add_setting( 'zerif_address_icon', array(
-			'sanitize_callback' => 'esc_url_raw',
-			'default' => get_template_directory_uri().'/images/map25-redish.png'
-		));
+		// $wp_customize->add_setting( 'zerif_address_icon', array(
+		// 	'sanitize_callback' => 'esc_url_raw',
+		// 	'default' => get_template_directory_uri().'/images/map25-redish.png'
+		// ));
 		
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_address_icon', array(
-			'label'    => __( 'Address section - icon', 'zerif-lite' ),
-			'section'  => 'zerif_general_footer_section',
-			'priority' => 9,
-		)));
+		// $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_address_icon', array(
+		// 	'label'    => __( 'Address section - icon', 'zerif-lite' ),
+		// 	'section'  => 'zerif_general_footer_section',
+		// 	'priority' => 9,
+		// )));
 		
-		/* address */
-		$wp_customize->add_setting( 'zerif_address', array( 
-			'sanitize_callback' => 'zerif_sanitize_text', 
-			'default' => __('Company address','zerif-lite'),
-		));
+		// /* address */
+		// $wp_customize->add_setting( 'zerif_address', array( 
+		// 	'sanitize_callback' => 'zerif_sanitize_text', 
+		// 	'default' => __('Company address','zerif-lite'),
+		// ));
 		
-		$wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_address', array(
-			'label'   => __( 'Address', 'zerif-lite' ),
-			'section' => 'zerif_general_footer_section',
-			'priority' => 10
-		)));
+		// $wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_address', array(
+		// 	'label'   => __( 'Address', 'zerif-lite' ),
+		// 	'section' => 'zerif_general_footer_section',
+		// 	'priority' => 10
+		// )));
 		
 		/* email - ICON */
 		$wp_customize->add_setting( 'zerif_email_icon', array(
@@ -288,28 +288,28 @@ function zerif_customize_register( $wp_customize ) {
 		)));
 		
 		/* phone number - ICON */
-		$wp_customize->add_setting( 'zerif_phone_icon', array(
-			'sanitize_callback' => 'esc_url_raw',
-			'default' => get_template_directory_uri().'/images/telephone65-blue.png'
-		));
+		// $wp_customize->add_setting( 'zerif_phone_icon', array(
+		// 	'sanitize_callback' => 'esc_url_raw',
+		// 	'default' => get_template_directory_uri().'/images/telephone65-blue.png'
+		// ));
 		
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_phone_icon', array(
-			'label'    => __( 'Phone number section - icon', 'zerif-lite' ),
-			'section'  => 'zerif_general_footer_section',
-			'priority' => 13,
-		)));
+		// $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zerif_phone_icon', array(
+		// 	'label'    => __( 'Phone number section - icon', 'zerif-lite' ),
+		// 	'section'  => 'zerif_general_footer_section',
+		// 	'priority' => 13,
+		// )));
 		
-		/* phone number */	
-		$wp_customize->add_setting( 'zerif_phone', array(
-			'sanitize_callback' => 'zerif_sanitize_number',
-			'default' => '<a href="tel:0 332 548 954">0 332 548 954</a>',
-		));
+		// /* phone number */	
+		// $wp_customize->add_setting( 'zerif_phone', array(
+		// 	'sanitize_callback' => 'zerif_sanitize_number',
+		// 	'default' => '<a href="tel:0 332 548 954">0 332 548 954</a>',
+		// ));
 		
-		$wp_customize->add_control(new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_phone', array(
-			'label'   => __( 'Phone number', 'zerif-lite' ),
-			'section' => 'zerif_general_footer_section',
-			'priority' => 14
-		)));
+		// $wp_customize->add_control(new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_phone', array(
+		// 	'label'   => __( 'Phone number', 'zerif-lite' ),
+		// 	'section' => 'zerif_general_footer_section',
+		// 	'priority' => 14
+		// )));
 	
 	else: /* Old versions of WordPress */
 	
