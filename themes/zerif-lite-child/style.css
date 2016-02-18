@@ -12,6 +12,27 @@ Theme URI:     http://themeisle.com/themes/zerif-lite/
  Text Domain:  zerif-lite-child
 */
 
+
+.widget_dvm {
+	background: white;
+	margin: 0px;
+	padding-top: 100px;
+	padding-bottom: 90px;
+}
+
+.widget_dvm h2 {
+	color: #000;
+}
+
+.testimonial {
+	background: #272727 !important;
+}
+
+
+ .widget_dvm .section-header{
+ 	color: #FFF;
+ }
+
 .zerif-copyright-box {
 	visibility: hidden;
 	width: 100%;

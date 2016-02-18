@@ -247,7 +247,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 	/* Defiscalisé */
 
-	if(is_active_sidebar('defiscalise')){ dynamic_sidebar( 'defiscalise' ) ;}
+	if(is_active_sidebar('dvm')){ dynamic_sidebar( 'dvm' ) ;}
 
 
 

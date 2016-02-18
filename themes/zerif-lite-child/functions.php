@@ -18,6 +18,17 @@ function themeslug_enqueue_style() {
     wp_enqueue_style( 'theme-stylesheet', get_stylesheet_uri(), false );
 }
 
+// function wmt_setup(){
+// 	if ( version_compare( get_bloginfo( 'version' ), '3.4', '<' ) )
+// 		require_once( get_stylesheet_directory() . '/inc/wmt-options.php' );
+// 	else
+// 		require_once( get_template_directory_uri() . '/inc/customizer.php' );
+// }
+// add_action( 'init', 'wmt_setup' );
+
+
+
+
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 
 
@@ -36,13 +47,14 @@ if ( function_exists('register_sidebar') ) {
 	) );
 
     register_sidebar(array(
-		'name' => __( 'defiscalise', 'lmdn' ),
-		'id' => 'defiscalise',
-		'description' => __( 'Widget de defiscalise', 'lmdn'),
-		'before_widget' => '<section class="widget_defiscalise" id="defiscalise">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2>',
-		'after_title' => '</h2>', 
+		'name' => __( 'dvm', 'lmdn' ),
+		'id' => 'dvm',
+		'description' => __( 'Widget de dvm', 'lmdn'),
+		'before_widget' => '<section class="widget_dvm" id="dvm"><div class="container">',
+		'after_widget' => '</div></section>',
+		'before_title' => '<div class="section-header"><h2 class="white-text">',
+		'after_title' => '</h2></div>', 
 	) );
 
 }
+
