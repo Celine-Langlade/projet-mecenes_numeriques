@@ -85,14 +85,14 @@ function zerif_customize_register( $wp_customize ) {
 	if ( class_exists( 'WP_Customize_Panel' ) ):
 	
 		$wp_customize->add_panel( 'panel_general', array(
-			'priority' => 30,
+			'priority' => 5,
 			'capability' => 'edit_theme_options',
 			'title' => __( 'General options', 'zerif-lite' )
 		));
 		
 		$wp_customize->add_section( 'zerif_general_section' , array(
 			'title' => __( 'General', 'zerif-lite' ),
-			'priority' => 30,
+			'priority' => 5,
 			'panel' => 'panel_general'
 		));
 		
@@ -315,7 +315,7 @@ function zerif_customize_register( $wp_customize ) {
 	
 		$wp_customize->add_section( 'zerif_general_section' , array(
 			'title'       => __( 'General options', 'zerif-lite' ),
-			'priority'    => 30,
+			'priority'    => 5,
 			'description' => __('Zerif theme general options','zerif-lite'),
 		));
 		
@@ -511,7 +511,7 @@ function zerif_customize_register( $wp_customize ) {
 		)) );
 	
 	endif;
-	
+
 	/*****************************************************/
     /**************	BIG TITLE SECTION *******************/
 	/****************************************************/
@@ -519,7 +519,7 @@ function zerif_customize_register( $wp_customize ) {
 	if ( class_exists( 'WP_Customize_Panel' ) ):
 
 		$wp_customize->add_panel( 'panel_big_title', array(
-			'priority' => 31,
+			'priority' => 101,
 			'capability' => 'edit_theme_options',
 			'title' => __( 'Big title section', 'zerif-lite' )
 		));
@@ -676,7 +676,7 @@ function zerif_customize_register( $wp_customize ) {
 
 		$wp_customize->add_section( 'zerif_bigtitle_section' , array(
 			'title'       => __( 'Big title section', 'zerif-lite' ),
-			'priority'    => 31
+			'priority'    => 101
 		));
 		
 		/* show/hide */
@@ -826,14 +826,14 @@ function zerif_customize_register( $wp_customize ) {
 	if ( class_exists( 'WP_Customize_Panel' ) ):
 	
 		$wp_customize->add_panel( 'panel_about', array(
-			'priority' => 34,
+			'priority' => 102,
 			'capability' => 'edit_theme_options',
 			'title' => __( 'About us section', 'zerif-lite' )
 		));
 		
 		$wp_customize->add_section( 'zerif_aboutus_settings_section' , array(
 			'title'       => __( 'Settings', 'zerif-lite' ),
-			'priority'    => 1,
+			'priority'    => 102,
 			'panel' => 'panel_about'
 		));
 		
@@ -1102,7 +1102,7 @@ function zerif_customize_register( $wp_customize ) {
 	
 		$wp_customize->add_section( 'zerif_aboutus_section' , array(
 			'title' => __( 'About us section', 'zerif-lite' ),
-			'priority' => 34
+			'priority' => 102
 		));
 		
 		/* about us show/hide */
@@ -1319,7 +1319,7 @@ function zerif_customize_register( $wp_customize ) {
 	if ( class_exists( 'WP_Customize_Panel' ) ):
 	
 		$wp_customize->add_panel( 'panel_ourfocus', array(
-			'priority' => 32,
+			'priority' => 103,
 			'capability' => 'edit_theme_options',
 			'title' => __( 'Our focus section', 'zerif-lite' )
 		));
@@ -1373,7 +1373,7 @@ function zerif_customize_register( $wp_customize ) {
 	
 		$wp_customize->add_section( 'zerif_ourfocus_section' , array(
 			'title'       => __( 'Our focus section', 'zerif-lite' ),
-			'priority'    => 32,
+			'priority'    => 103,
 			'description' => __( 'The main content of this section is customizable in: Dashboard -> Appearance -> Widgets -> Our focus section. There you must add the "Zerif - Our focus widget"', 'zerif-lite' )
 		));
 		
@@ -1528,7 +1528,7 @@ function zerif_customize_register( $wp_customize ) {
 	if ( class_exists( 'WP_Customize_Panel' ) ):
 	
 		$wp_customize->add_panel( 'panel_testimonials', array(
-			'priority' => 36,
+			'priority' => 105,
 			'capability' => 'edit_theme_options',
 			'title' => __( 'Testimonials section', 'zerif-lite' )
 		) );
@@ -1593,7 +1593,7 @@ function zerif_customize_register( $wp_customize ) {
 		
 		$wp_customize->add_section( 'zerif_testimonials_section' , array(
 			'title'       => __( 'Testimonials section', 'zerif-lite' ),
-			'priority'    => 36,
+			'priority'    => 105,
 			'description' => __( 'The main content of this section is customizable in: Dashboard -> Appearance -> Widgets -> Testimonials section. There you must add the "Zerif - Testimonial widget"', 'zerif-lite' )
 		));
 		
@@ -1880,116 +1880,116 @@ function zerif_customize_register( $wp_customize ) {
     /************	CONTACT US SECTION *********************/
 	/*******************************************************/
 
-	$zerif_contact_us_section_description = '';
+	// $zerif_contact_us_section_description = '';
 
-	/* if Pirate Forms is installed */
-	if( defined("PIRATE_FORMS_VERSION") ):
-		$zerif_contact_us_section_description = __( 'For more advanced settings please go to Settings -> Pirate Forms','zerif-lite' );
-	endif;
+	// /* if Pirate Forms is installed */
+	// if( defined("PIRATE_FORMS_VERSION") ):
+	// 	$zerif_contact_us_section_description = __( 'For more advanced settings please go to Settings -> Pirate Forms','zerif-lite' );
+	// endif;
 
-	$wp_customize->add_section( 'zerif_contactus_section' , array(
-		'title'       => __( 'Contact us section', 'zerif-lite' ),
-		'description' => $zerif_contact_us_section_description,
-    	'priority'    => 38
-	));
+	// $wp_customize->add_section( 'zerif_contactus_section' , array(
+	// 	'title'       => __( 'Contact us section', 'zerif-lite' ),
+	// 	'description' => $zerif_contact_us_section_description,
+ //    	'priority'    => 38
+	// ));
 	
-	/* contact us show/hide */
-	$wp_customize->add_setting( 'zerif_contactus_show', array(
-		'sanitize_callback' => 'zerif_sanitize_text',
-		'transport' => 'postMessage'
-	));
+	// /* contact us show/hide */
+	// $wp_customize->add_setting( 'zerif_contactus_show', array(
+	// 	'sanitize_callback' => 'zerif_sanitize_text',
+	// 	'transport' => 'postMessage'
+	// ));
 	
-    $wp_customize->add_control( 'zerif_contactus_show', array(
-		'type' => 'checkbox',
-		'label' => __('Hide contact us section?','zerif-lite'),
-		'section' => 'zerif_contactus_section',
-		'priority'    => 1,
-	));
+ //    $wp_customize->add_control( 'zerif_contactus_show', array(
+	// 	'type' => 'checkbox',
+	// 	'label' => __('Hide contact us section?','zerif-lite'),
+	// 	'section' => 'zerif_contactus_section',
+	// 	'priority'    => 1,
+	// ));
 	
-	/* contactus title */
-	$wp_customize->add_setting( 'zerif_contactus_title', array(
-		'sanitize_callback' => 'zerif_sanitize_text',
-		'default' => __('Get in touch','zerif-lite'),
-		'transport' => 'postMessage'
-	));
+	// /* contactus title */
+	// $wp_customize->add_setting( 'zerif_contactus_title', array(
+	// 	'sanitize_callback' => 'zerif_sanitize_text',
+	// 	'default' => __('Get in touch','zerif-lite'),
+	// 	'transport' => 'postMessage'
+	// ));
 	
-	$wp_customize->add_control( 'zerif_contactus_title', array(
-		'label'    => __( 'Contact us section title', 'zerif-lite' ),
-		'section'  => 'zerif_contactus_section',
-		'priority'    => 2,
-	));
+	// $wp_customize->add_control( 'zerif_contactus_title', array(
+	// 	'label'    => __( 'Contact us section title', 'zerif-lite' ),
+	// 	'section'  => 'zerif_contactus_section',
+	// 	'priority'    => 2,
+	// ));
 	
-	/* contactus subtitle */
-	$wp_customize->add_setting( 'zerif_contactus_subtitle', array(
-		'sanitize_callback' => 'zerif_sanitize_text',
-		'transport' => 'postMessage'
-	));
+	// /* contactus subtitle */
+	// $wp_customize->add_setting( 'zerif_contactus_subtitle', array(
+	// 	'sanitize_callback' => 'zerif_sanitize_text',
+	// 	'transport' => 'postMessage'
+	// ));
 	
-	$wp_customize->add_control( 'zerif_contactus_subtitle', array(
-		'label'    => __( 'Contact us section subtitle', 'zerif-lite' ),
-	    'section'  => 'zerif_contactus_section',
-		'priority'    => 3,
-	));
+	// $wp_customize->add_control( 'zerif_contactus_subtitle', array(
+	// 	'label'    => __( 'Contact us section subtitle', 'zerif-lite' ),
+	//     'section'  => 'zerif_contactus_section',
+	// 	'priority'    => 3,
+	// ));
 	
-	/* contactus email */
-	$wp_customize->add_setting( 'zerif_contactus_email', array(
-		'sanitize_callback' => 'zerif_sanitize_text'
-	));
+	// /* contactus email */
+	// $wp_customize->add_setting( 'zerif_contactus_email', array(
+	// 	'sanitize_callback' => 'zerif_sanitize_text'
+	// ));
 			
-	$wp_customize->add_control( 'zerif_contactus_email', array(
-		'label'    => __( 'Email address', 'zerif-lite' ),
-		'section'  => 'zerif_contactus_section',
-		'priority'    => 4,
-	));
+	// $wp_customize->add_control( 'zerif_contactus_email', array(
+	// 	'label'    => __( 'Email address', 'zerif-lite' ),
+	// 	'section'  => 'zerif_contactus_section',
+	// 	'priority'    => 4,
+	// ));
 		
-	/* contactus button label */
-	$wp_customize->add_setting( 'zerif_contactus_button_label', array(
-		'sanitize_callback' => 'zerif_sanitize_text',
-		'default' => __('Send Message','zerif-lite'),
-		'transport' => 'postMessage'
-	));
+	// /* contactus button label */
+	// $wp_customize->add_setting( 'zerif_contactus_button_label', array(
+	// 	'sanitize_callback' => 'zerif_sanitize_text',
+	// 	'default' => __('Send Message','zerif-lite'),
+	// 	'transport' => 'postMessage'
+	// ));
 			
-	$wp_customize->add_control( 'zerif_contactus_button_label', array(
-		'label'    => __( 'Button label', 'zerif-lite' ),
-		'section'  => 'zerif_contactus_section',
-		'priority'    => 5,
-	));
+	// $wp_customize->add_control( 'zerif_contactus_button_label', array(
+	// 	'label'    => __( 'Button label', 'zerif-lite' ),
+	// 	'section'  => 'zerif_contactus_section',
+	// 	'priority'    => 5,
+	// ));
 	
-	/* recaptcha */
-	$wp_customize->add_setting( 'zerif_contactus_recaptcha_show', array(
-		'sanitize_callback' => 'zerif_sanitize_text'
-	));
+	// /* recaptcha */
+	// $wp_customize->add_setting( 'zerif_contactus_recaptcha_show', array(
+	// 	'sanitize_callback' => 'zerif_sanitize_text'
+	// ));
 	
-	$wp_customize->add_control( 'zerif_contactus_recaptcha_show', array(
-		'type' => 'checkbox',
-		'label' => __('Hide reCaptcha?','zerif-lite'),
-		'section' => 'zerif_contactus_section',
-		'priority'    => 6,
-	));
+	// $wp_customize->add_control( 'zerif_contactus_recaptcha_show', array(
+	// 	'type' => 'checkbox',
+	// 	'label' => __('Hide reCaptcha?','zerif-lite'),
+	// 	'section' => 'zerif_contactus_section',
+	// 	'priority'    => 6,
+	// ));
 	
-	/* site key */
-	$attribut_new_tab = (isset($zerif_accessibility) && ($zerif_accessibility != 1) ? ' target="_blank"' : '' );
-	$wp_customize->add_setting( 'zerif_contactus_sitekey', array(
-		'sanitize_callback' => 'zerif_sanitize_text'
-	));
+	// /* site key */
+	// $attribut_new_tab = (isset($zerif_accessibility) && ($zerif_accessibility != 1) ? ' target="_blank"' : '' );
+	// $wp_customize->add_setting( 'zerif_contactus_sitekey', array(
+	// 	'sanitize_callback' => 'zerif_sanitize_text'
+	// ));
 	
-	$wp_customize->add_control( 'zerif_contactus_sitekey', array(
-		'label'    => __( 'Site key', 'zerif-lite' ),
-		'description' => '<a'.$attribut_new_tab.' href="https://www.google.com/recaptcha/admin#list">'.__('Create an account here','zerif-lite').'</a> to get the Site key and the Secret key for the reCaptcha.',
-		'section'  => 'zerif_contactus_section',
-		'priority'    => 7,
-	));
+	// $wp_customize->add_control( 'zerif_contactus_sitekey', array(
+	// 	'label'    => __( 'Site key', 'zerif-lite' ),
+	// 	'description' => '<a'.$attribut_new_tab.' href="https://www.google.com/recaptcha/admin#list">'.__('Create an account here','zerif-lite').'</a> to get the Site key and the Secret key for the reCaptcha.',
+	// 	'section'  => 'zerif_contactus_section',
+	// 	'priority'    => 7,
+	// ));
 	
-	/* secret key */
-	$wp_customize->add_setting( 'zerif_contactus_secretkey', array(
-		'sanitize_callback' => 'zerif_sanitize_text'
-	));
+	// /* secret key */
+	// $wp_customize->add_setting( 'zerif_contactus_secretkey', array(
+	// 	'sanitize_callback' => 'zerif_sanitize_text'
+	// ));
 	
-	$wp_customize->add_control( 'zerif_contactus_secretkey', array(
-		'label'    => __( 'Secret key', 'zerif-lite' ),
-		'section'  => 'zerif_contactus_section',
-		'priority'    => 8,
-	));
+	// $wp_customize->add_control( 'zerif_contactus_secretkey', array(
+	// 	'label'    => __( 'Secret key', 'zerif-lite' ),
+	// 	'section'  => 'zerif_contactus_section',
+	// 	'priority'    => 8,
+	// ));
 
 	/****************************************/
 	/*******	Google maps section *********/

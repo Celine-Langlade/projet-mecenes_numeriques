@@ -11,7 +11,7 @@ function themeslug_enqueue_style() {
 	wp_enqueue_style( 'parent-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/ie.css', false );
 	wp_enqueue_style( 'parent-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/pixeden-icons.css', false );
 	wp_enqueue_style( 'parent-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/responsive.css', false );
-	wp_enqueue_style( 'parent-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/style-mobile.css', false );
+	wp_enqueue_style( 'parent-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/style-m obile.css', false );
 	wp_enqueue_style( 'parent-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/zerif_customizer_custom_css.css', false );
     }
     // load active theme stylesheet in both cases
@@ -20,19 +20,7 @@ function themeslug_enqueue_style() {
 
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 
-
-/* Ajout de la zone widget défiscalisé */
-if ( function_exists('register_sidebar') ) {
-
- // //  register_sidebar(array(
-	// 	'name' => __( 'zoneslider', 'lmdn' ),
-	// 	'id' => 'zoneslider',
-	// 	'description' => __( 'Widget de zoneslider', 'lmdn'),
-	// 	'before_widget' => '<section class="widget_zoneslider">',
-	// 	'after_widget' => '</section>',
-	// 	'before_title' => '<h2>',
-	// 	'after_title' => '</h2>', 
-	// ) );
+function zerif_widgets_init_child() {    
 
     register_sidebar(array(
 		'name' => __( 'dvm', 'lmdn' ),
@@ -43,5 +31,18 @@ if ( function_exists('register_sidebar') ) {
 		'before_title' => '<div class="section-header"><h2 class="white-text">',
 		'after_title' => '</h2></div>', 
 	) );
+    
+}
+
+add_action('widgets_init', 'zerif_widgets_init_child');
+
+
+add_action( 'wp_dashboard_setup', 'register_my_dashboard_widget' );
+function register_my_dashboard_widget() {
+	wp_add_dashboard_widget(
+		'my_dashboard_widget',
+		'My Dashboard Widget',
+		'my_dashboard_widget_display'
+	);
 
 }

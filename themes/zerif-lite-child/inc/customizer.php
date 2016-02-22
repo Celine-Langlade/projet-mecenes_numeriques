@@ -906,11 +906,35 @@ function zerif_customize_register( $wp_customize ) {
 			'priority'    => 5,
 		));
 		
-		$wp_customize->add_section( 'zerif_aboutus_feat1_section' , array(
-			'title'       => __( 'Feature no#1', 'zerif-lite' ),
-			'priority'    => 3,
-			'panel' => 'panel_about'
+		/* text 2 */
+		$wp_customize->add_setting( 'zerif_aboutus_text_2', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','zerif-lite'),
 		));
+		
+		$wp_customize->add_control( 'zerif_aboutus_text_2', array(
+			'label'    => __( 'Text', 'zerif-lite' ),
+			'section'  => 'zerif_aboutus_main_section',
+			'priority'    => 5,
+		));
+		
+		/* text 3 */
+		$wp_customize->add_setting( 'zerif_aboutus_text_3', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','zerif-lite'),
+		));
+		
+		$wp_customize->add_control( 'zerif_aboutus_text_3', array(
+			'label'    => __( 'Text', 'zerif-lite' ),
+			'section'  => 'zerif_aboutus_main_section',
+			'priority'    => 5,
+		));
+		
+		// $wp_customize->add_section( 'zerif_aboutus_feat1_section' , array(
+		// 	'title'       => __( 'Feature no#1', 'zerif-lite' ),
+		// 	'priority'    => 3,
+		// 	'panel' => 'panel_about'
+		// ));
 		
 		// /* feature no#1 */
 		// $wp_customize->add_setting( 'zerif_aboutus_feature1_title', array(

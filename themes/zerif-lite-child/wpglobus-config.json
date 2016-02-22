@@ -17,31 +17,6 @@
         "type": "textarea"
       }
     },
-    "zerif_bigtitle_section": {
-      "zerif_bigtitle_title": {
-        "type": "text"
-      },
-      "zerif_bigtitle_redbutton_label": {
-        "type": "text"
-      },
-	  "zerif_bigtitle_redbutton_url": {
-        "type": "url"
-      },	  
-      "zerif_bigtitle_greenbutton_label": {
-        "type": "text"
-      },
-	  "zerif_bigtitle_greenbutton_url": {
-        "type": "url"
-      }	  
-    },
-    "zerif_ourfocus_section": {
-      "zerif_ourfocus_title": {
-        "type": "text"
-      },
-      "zerif_ourfocus_subtitle": {
-        "type": "text"
-      }
-    },
     "zerif_aboutus_main_section": {
       "zerif_aboutus_title": {
         "type": "text"
@@ -91,6 +66,31 @@
         "type": "text"
       },
       "zerif_aboutus_feature4_text": {
+        "type": "text"
+      }
+    },
+    "zerif_bigtitle_section": {
+      "zerif_bigtitle_title": {
+        "type": "text"
+      },
+      "zerif_bigtitle_redbutton_label": {
+        "type": "text"
+      },
+	  "zerif_bigtitle_redbutton_url": {
+        "type": "url"
+      },	  
+      "zerif_bigtitle_greenbutton_label": {
+        "type": "text"
+      },
+	  "zerif_bigtitle_greenbutton_url": {
+        "type": "url"
+      }	  
+    },
+    "zerif_ourfocus_section": {
+      "zerif_ourfocus_title": {
+        "type": "text"
+      },
+      "zerif_ourfocus_subtitle": {
         "type": "text"
       }
     },
