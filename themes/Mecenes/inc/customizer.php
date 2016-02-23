@@ -194,7 +194,7 @@ function zerif_customize_register( $wp_customize ) {
 		$wp_customize->add_panel( 'panel_big_title', array(
 			'priority' => 101,
 			'capability' => 'edit_theme_options',
-			'title' => __( 'Big title section', 'zerif-lite' )
+			'title' => __( 'Section titre', 'zerif-lite' )
 		));
 
 		$wp_customize->add_section( 'zerif_bigtitle_section' , array(
@@ -278,18 +278,18 @@ function zerif_customize_register( $wp_customize ) {
 		)));
 
 	/************************************/
-	/******* ABOUT US SECTION ***********/
+	/**** SECTION QUI SOMMES-NOUS *******/
 	/************************************/
 	
 		$wp_customize->add_panel( 'panel_about', array(
 			'priority' => 102,
 			'capability' => 'edit_theme_options',
-			'title' => __( 'About us section', 'zerif-lite' )
+			'title' => __( 'Section qui sommes-nous?', 'zerif-lite' )
 		));
 		
 		$wp_customize->add_section( 'zerif_aboutus_settings_section' , array(
 			'title'       => __( 'Settings', 'zerif-lite' ),
-			'priority'    => 102,
+			'priority'    => 1,
 			'panel' => 'panel_about'
 		));
 		
@@ -374,13 +374,13 @@ function zerif_customize_register( $wp_customize ) {
 		));
 
 	/********************************************************************/
-	/*************  OUR FOCUS SECTION **********************************/
+	/********************  NOS MECENES **********************************/
 	/********************************************************************/
 	
 		$wp_customize->add_panel( 'panel_ourfocus', array(
 			'priority' => 103,
 			'capability' => 'edit_theme_options',
-			'title' => __( 'Our focus section', 'zerif-lite' )
+			'title' => __( 'Section nos mécènes', 'zerif-lite' )
 		));
 		
 		$wp_customize->add_section( 'zerif_ourfocus_section' , array(
@@ -405,7 +405,7 @@ function zerif_customize_register( $wp_customize ) {
 		/* our focus title */
 		$wp_customize->add_setting( 'zerif_ourfocus_title', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
-			'default' => __('FEATURES','zerif-lite'),
+			'default' => __('Nos mécènes','zerif-lite'),
 			'transport' => 'postMessage'
 		));
 				
@@ -427,72 +427,6 @@ function zerif_customize_register( $wp_customize ) {
 			'section'  => 'zerif_ourfocus_section',
 			'priority'    => 3,
 		));
-	
-	/**********************************************/
-    /**********	TESTIMONIALS SECTION **************/
-	/**********************************************/
-	
-		$wp_customize->add_panel( 'panel_testimonials', array(
-			'priority' => 105,
-			'capability' => 'edit_theme_options',
-			'title' => __( 'Testimonials section', 'zerif-lite' )
-		) );
-		
-		$wp_customize->add_section( 'zerif_testimonials_section' , array(
-			'title'       => __( 'Testimonials section', 'zerif-lite' ),
-			'priority'    => 1,
-			'panel'       => 'panel_testimonials'
-		));
-		
-		/* testimonials show/hide */
-		$wp_customize->add_setting( 'zerif_testimonials_show', array(
-			'sanitize_callback' => 'zerif_sanitize_text',
-			'transport' => 'postMessage'
-		));
-		
-		$wp_customize->add_control( 'zerif_testimonials_show', array(
-			'type' => 'checkbox',
-			'label' => __('Hide testimonials section?','zerif-lite'),
-			'section' => 'zerif_testimonials_section',
-			'priority'    => 1,
-		));
-		
-		/* testimonial pinterest layout */
-		$wp_customize->add_setting( 'zerif_testimonials_pinterest_style', array(
-			'sanitize_callback' => 'zerif_sanitize_text'
-		));
-		
-		$wp_customize->add_control( 'zerif_testimonials_pinterest_style', array(
-			'type' 			=> 'checkbox',
-			'label' 		=> __('Use pinterest layout?','zerif-lite'),
-			'section' 		=> 'zerif_testimonials_section',
-			'priority'    	=> 2,
-		));
-		
-		/* testimonials title */
-		$wp_customize->add_setting( 'zerif_testimonials_title', array(
-			'sanitize_callback' => 'zerif_sanitize_text',
-			'default' => __('Testimonials','zerif-lite'),
-			'transport' => 'postMessage'
-		));
-		
-		$wp_customize->add_control( 'zerif_testimonials_title', array(
-			'label'    => __( 'Title', 'zerif-lite' ),
-			'section'  => 'zerif_testimonials_section',
-			'priority'    => 2,
-		));
-		
-		/* testimonials subtitle */
-		$wp_customize->add_setting( 'zerif_testimonials_subtitle', array(
-			'sanitize_callback' => 'zerif_sanitize_text',
-			'transport' => 'postMessage'
-		));
-		
-		$wp_customize->add_control( 'zerif_testimonials_subtitle', array(
-			'label'    => __( 'Testimonials subtitle', 'zerif-lite' ),
-			'section'  => 'zerif_testimonials_section',
-			'priority'    => 3,
-		));	
 
 	/**********************************************/
     /**********	   Devenir Mecene    **************/
@@ -501,11 +435,11 @@ function zerif_customize_register( $wp_customize ) {
 		$wp_customize->add_panel( 'panel_devenir_mecene', array(
 			'priority' => 104,
 			'capability' => 'edit_theme_options',
-			'title' => __( 'Devenir mecene', 'zerif-lite' )
+			'title' => __( 'Section devenir mécène', 'zerif-lite' )
 		) );
 		
-		$wp_customize->add_section( 'zerif_devenir_mecene_section' , array(
-			'title'       => __( 'Devenir mecene section', 'zerif-lite' ),
+		$wp_customize->add_section( 'zerif_devenir_mecene_settings_section' , array(
+			'title'       => __( 'Options', 'zerif-lite' ),
 			'priority'    => 1,
 			'panel'       => 'panel_devenir_mecene'
 		));
@@ -518,10 +452,108 @@ function zerif_customize_register( $wp_customize ) {
 		
 		$wp_customize->add_control( 'zerif_devenir_mecene_show', array(
 			'type' => 'checkbox',
-			'label' => __('Hide Devenir Mecene section?','zerif-lite'),
-			'section' => 'zerif_devenir_mecene_section',
+			'label' => __('Cacher la séction devenir mécène?','zerif-lite'),
+			'section' => 'zerif_devenir_mecene_settings_section',
 			'priority'    => 1,
 		));
+		
+		$wp_customize->add_section( 'zerif_devenir_mecene_main_section' , array(
+			'title'       => __( 'Contenu principal', 'zerif-lite' ),
+			'priority'    => 2,
+			'panel' => 'panel_devenir_mecene'
+		));
+		
+		/* Devenir mécène title */
+		$wp_customize->add_setting( 'zerif_devenir_mecene_title', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'default' => __('Devenir Mécènes','zerif-lite'),
+			'transport' => 'postMessage'
+		));
+				
+		$wp_customize->add_control( 'zerif_devenir_mecene_title', array(
+			'label'    => __( 'Title', 'zerif-lite' ),
+			'section'  => 'zerif_devenir_mecene_main_section',
+			'priority'    => 1,
+		));
+		
+		/* Text of mécène */
+		$wp_customize->add_setting( 'zerif_devenir_mecene_text', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','zerif-lite'),
+		));
+		
+		$wp_customize->add_control( 'zerif_devenir_mecene_text', array(
+			'label'    => __( 'Text', 'zerif-lite' ),
+			'section'  => 'zerif_devenir_mecene_main_section',
+			'priority'    => 5,
+		));
+
+	
+	/**********************************************/
+    /***********	SECTION TEMOIGNAGES ************/
+	/**********************************************/
+	
+		$wp_customize->add_panel( 'panel_testimonials', array(
+			'priority' => 105,
+			'capability' => 'edit_theme_options',
+			'title' => __( 'Section Témoignage', 'zerif-lite' )
+		) );
+		
+		$wp_customize->add_section( 'zerif_testimonials_section' , array(
+			'title'       => __( 'Section Témoignage', 'zerif-lite' ),
+			'priority'    => 1,
+			'panel'       => 'panel_testimonials'
+		));
+		
+		/* testimonials show/hide */
+		$wp_customize->add_setting( 'zerif_testimonials_show', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'transport' => 'postMessage'
+		));
+		
+		$wp_customize->add_control( 'zerif_testimonials_show', array(
+			'type' => 'checkbox',
+			'label' => __('Cacher la section témoignage?','zerif-lite'),
+			'section' => 'zerif_testimonials_section',
+			'priority'    => 1,
+		));
+		
+		/* testimonial pinterest layout */
+		$wp_customize->add_setting( 'zerif_testimonials_pinterest_style', array(
+			'sanitize_callback' => 'zerif_sanitize_text'
+		));
+		
+		$wp_customize->add_control( 'zerif_testimonials_pinterest_style', array(
+			'type' 			=> 'checkbox',
+			'label' 		=> __('Utiliser le layout pinterest?','zerif-lite'),
+			'section' 		=> 'zerif_testimonials_section',
+			'priority'    	=> 2,
+		));
+		
+		/* testimonials title */
+		$wp_customize->add_setting( 'zerif_testimonials_title', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'default' => __('Témoignages','zerif-lite'),
+			'transport' => 'postMessage'
+		));
+		
+		$wp_customize->add_control( 'zerif_testimonials_title', array(
+			'label'    => __( 'Titre', 'zerif-lite' ),
+			'section'  => 'zerif_testimonials_section',
+			'priority'    => 2,
+		));
+		
+		/* testimonials subtitle */
+		$wp_customize->add_setting( 'zerif_testimonials_subtitle', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'transport' => 'postMessage'
+		));
+		
+		$wp_customize->add_control( 'zerif_testimonials_subtitle', array(
+			'label'    => __( 'Sous-titre témoignage', 'zerif-lite' ),
+			'section'  => 'zerif_testimonials_section',
+			'priority'    => 3,
+		));	
 	
 }
 add_action( 'customize_register', 'zerif_customize_register' );

@@ -149,18 +149,6 @@ function zerif_widgets_init() {
         'after_title' => '</h1>',
     ));
 
-    // register_sidebars( 
-    //     3, 
-    //     array(
-    //         'name'          => __('Footer area %d','zerif-lite'),
-    //         'id'            => 'zerif-sidebar-footer',
-    //         'before_widget' => '<aside id="%1$s" class="widget footer-widget-footer %2$s">',
-    //         'after_widget'  => '</aside>',
-    //         'before_title'  => '<h1 class="widget-title">',
-    //         'after_title'   => '</h1>'
-    //     ) 
-    // );
-
     register_sidebar(array(
         'name' => __( 'devenir_mecene', 'lmdn' ),
         'id' => 'devenir_mecene',
@@ -410,7 +398,7 @@ function zerif_register_widgets() {
         
         elseif( $zerif_lite_sidebar == 'sidebar-testimonials' ):
         
-            $zerif_lite_name = __('Testimonials section widgets', 'zerif-lite');
+            $zerif_lite_name = __('Widgets de la section témoignages', 'zerif-lite');
         
         elseif( $zerif_lite_sidebar == 'sidebar-devenir_mecene' ):
         
