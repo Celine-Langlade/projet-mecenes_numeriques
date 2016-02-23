@@ -6375,3 +6375,12 @@ body.custom-background {
 .devenir_mecene .section-header .section-legend {
 	color: #FFF;
 }
+
+textarea {
+	resize: none;
+}
+
+.modal-body {
+    position: relative;
+    padding: 10px 200px 30px 200px;
+}
