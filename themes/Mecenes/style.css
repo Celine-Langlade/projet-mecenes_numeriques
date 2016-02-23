@@ -6362,3 +6362,16 @@ body.custom-background {
 .about-us p {
 	font-size: 20px;
 }
+
+
+
+
+
+
+.devenir_mecene {
+	background: #8c7620;
+	padding-bottom: 90px;
+}
+.devenir_mecene .section-header .section-legend {
+	color: #FFF;
+}

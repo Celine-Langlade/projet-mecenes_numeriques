@@ -202,17 +202,6 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 	endif;
 
-	/* OUR TEAM */
-
-	// $zerif_ourteam_show = get_theme_mod('zerif_ourteam_show');
-
-	// if( isset($zerif_ourteam_show) && $zerif_ourteam_show != 1 ):
-
-	// 	get_template_part( 'sections/our_team' );
-
-	// endif;
-
-
 	/* SLIDER PROJETS FINI */
 
 	if(is_active_sidebar('slider')){ dynamic_sidebar( 'slider' ) ;} ?>
@@ -231,28 +220,11 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 	endif;
 
-	/* RIBBON WITH BOTTOM BUTTON */
-
-	// get_template_part( 'sections/ribbon_with_bottom_button' );
-
-	/* RIBBON WITH RIGHT SIDE BUTTON */
-
-	// get_template_part( 'sections/ribbon_with_right_button' ); */
-
-	/* LATEST NEWS */
-	// $zerif_latestnews_show = get_theme_mod('zerif_latestnews_show');
-
-	// if( isset($zerif_latestnews_show) && $zerif_latestnews_show != 1 ):
-
-	// 	get_template_part( 'sections/latest_news' );
-
-	// endif; */
-
+	/* Devenir Mécène */
 
 	$zerif_devenir_mecene_show = get_theme_mod('zerif_devenir_mecene_show');
 	if( isset($zerif_devenir_mecene_show) && $zerif_devenir_mecene_show != 1 ):
 	 	get_template_part( 'sections/devenirmecene' );
-
 	endif;
 
 }
