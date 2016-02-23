@@ -1650,6 +1650,38 @@ function zerif_customize_register( $wp_customize ) {
 	endif;
 	
 	/**********************************************/
+    /**********	   Devenir Mecene    **************/
+	/**********************************************/
+	if ( class_exists( 'WP_Customize_Panel' ) ):
+	
+		$wp_customize->add_panel( 'panel_devenir_mecene', array(
+			'priority' => 104,
+			'capability' => 'edit_theme_options',
+			'title' => __( 'Devenir mecene', 'zerif-lite' )
+		) );
+		
+		$wp_customize->add_section( 'zerif_devenir_mecene_section' , array(
+			'title'       => __( 'Devenir mecene section', 'zerif-lite' ),
+			'priority'    => 1,
+			'panel'       => 'panel_testimonials'
+		));
+		
+		/* testimonials show/hide */
+		$wp_customize->add_setting( 'zerif_devenir_mecene_show', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'transport' => 'postMessage'
+		));
+		
+		$wp_customize->add_control( 'zerif_devenir_mecene_show', array(
+			'type' => 'checkbox',
+			'label' => __('Hide Devenir Mecene section?','zerif-lite'),
+			'section' => 'zerif_devenir_mecene_section',
+			'priority'    => 1,
+		));
+		
+	endif;
+	
+	/**********************************************/
     /**********	LATEST NEWS SECTION ***************/
 	/**********************************************/
 	// $wp_customize->add_section( 'zerif_latestnews_section' , array(

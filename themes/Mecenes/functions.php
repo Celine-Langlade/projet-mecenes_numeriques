@@ -67,7 +67,7 @@ function zerif_setup() {
 
 	/* Customizer additions. */
 	
-    //require get_template_directory() . '/inc/customizer.php';
+    require get_template_directory() . '/inc/customizer.php';
     // $include = array ('inc/customizer.php');
 
     // locate_template($include, true, true);
@@ -160,6 +160,26 @@ function zerif_widgets_init() {
             'after_title'   => '</h1>'
         ) 
     );
+
+    register_sidebar(array(
+        'name' => __( 'devenir_mecene', 'lmdn' ),
+        'id' => 'devenir_mecene',
+        'description' => __( 'Widget de devenir_mecene', 'lmdn'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ) );
+
+    register_sidebar(array(
+        'name' => __( 'slider', 'lmdn' ),
+        'id' => 'slider',
+        'description' => __( 'Widget de slider', 'lmdn'),
+        'before_widget' => '<section class="widget_slider" id="dvm"><div class="container">',
+        'after_widget' => '</div></section>',
+        'before_title' => '<div class="section-header"><h2 class="white-text">',
+        'after_title' => '</h2></div>', 
+    ) );
     
 }
 

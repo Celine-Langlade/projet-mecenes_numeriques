@@ -20,6 +20,8 @@ function themeslug_enqueue_style() {
 
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 
+require_once (get_stylesheet_directory(). '/inc/customizer.php');
+
 function zerif_widgets_init_child() {    
 
     register_sidebar(array(
