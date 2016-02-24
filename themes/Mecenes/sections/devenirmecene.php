@@ -63,7 +63,7 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 
 			if( !empty($zerif_devenir_mecene_text) ):
 
-				echo '<div class="col-lg-12 col-md-12" data-scrollreveal="enter top after 0s over 1s">';
+				echo '<div class="col-lg-12 col-md-12 text-big" data-scrollreveal="enter top after 0s over 1s">';
 
 					echo '<p>';
 

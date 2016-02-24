@@ -6419,3 +6419,6 @@ textarea {
     border-radius: 40px !important; 
 }
 
+.text-big {
+	font-size: 1em;
+}
