@@ -542,7 +542,7 @@ function zerif_customize_register( $wp_customize ) {
 			'priority'    => 1,
 		));
 		
-		/* Text of devenir mécène */
+		/* Text de devenir mécène */
 		$wp_customize->add_setting( 'zerif_devenir_mecene_text', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
 			'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','zerif-lite'),
@@ -554,7 +554,7 @@ function zerif_customize_register( $wp_customize ) {
 			'priority'    => 2,
 		));
 
-		/* Title of devenir mécène entreprise*/
+		/* Title de devenir mécène entreprise*/
 		$wp_customize->add_setting( 'zerif_devenir_mecene_entreprise_title', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
 			'default' => __('Titre de la colonne entreprise','zerif-lite'),
@@ -566,7 +566,7 @@ function zerif_customize_register( $wp_customize ) {
 			'priority'    => 3,
 		));
 
-		/* Title of devenir mécène particulier */
+		/* Title de devenir mécène particulier */
 		$wp_customize->add_setting( 'zerif_devenir_mecene_particulier_title', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
 			'default' => __('Titre de la colonne particulier','zerif-lite'),
@@ -578,7 +578,7 @@ function zerif_customize_register( $wp_customize ) {
 			'priority'    => 4,
 		));
 
-		/* Text of devenir mécène entreprise */
+		/* Text de devenir mécène entreprise */
 		$wp_customize->add_setting( 'zerif_devenir_mecene_entreprise_text', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
 			'default' => __('Texte de la colonne entreprise','zerif-lite'),
@@ -590,7 +590,7 @@ function zerif_customize_register( $wp_customize ) {
 			'priority'    => 5,
 		));
 
-		/* Text of devenir mécène particulier */
+		/* Text de devenir mécène particulier */
 		$wp_customize->add_setting( 'zerif_devenir_mecene_particulier_text', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
 			'default' => __('Texte de la colonne particulier','zerif-lite'),
@@ -600,6 +600,36 @@ function zerif_customize_register( $wp_customize ) {
 			'label'    => __( 'Texte de la colonne particulier', 'zerif-lite' ),
 			'section'  => 'zerif_devenir_mecene_main_section',
 			'priority'    => 6,
+		));
+
+		$wp_customize->add_section( 'zerif_devenir_mecene_paypal_section' , array(
+			'title'       => __( 'Paypal', 'zerif-lite' ),
+			'priority'    => 3,
+			'panel' => 'panel_devenir_mecene'
+		));
+
+		/*  Texte du boutton compte Paypal */
+		$wp_customize->add_setting( 'zerif_devenir_mecene_paypal_boutton_text', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'default' => __('Donner avec Paypal','zerif-lite'),
+		));
+		
+		$wp_customize->add_control( 'zerif_devenir_mecene_paypal_boutton_text', array(
+			'label'    => __( 'Texte du boutton Paypal', 'zerif-lite' ),
+			'section'  => 'zerif_devenir_mecene_paypal_section',
+			'priority'    => 1,
+		));
+
+		/* Adresse e-mail du compte Paypal */
+		$wp_customize->add_setting( 'zerif_devenir_mecene_paypal_id', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'default' => __('mecenesdunumerique@gmail.com','zerif-lite'),
+		));
+		
+		$wp_customize->add_control( 'zerif_devenir_mecene_paypal_id', array(
+			'label'    => __( 'Adresse e-mail lié au compte Paypal', 'zerif-lite' ),
+			'section'  => 'zerif_devenir_mecene_paypal_section',
+			'priority'    => 2,
 		));
 	
 }

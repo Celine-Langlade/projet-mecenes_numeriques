@@ -182,7 +182,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 <?php
 
 
-	/* ABOUT US */
+	/* Qui sommes-nous */
 
 	$zerif_aboutus_show = get_theme_mod('zerif_aboutus_show');
 
@@ -192,7 +192,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 	endif;
 
-	/* OUR FOCUS SECTION */
+	/* Nos mécènes */
 
 	$zerif_ourfocus_show = get_theme_mod('zerif_ourfocus_show');
 
@@ -202,15 +202,19 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 	endif;
 
-	/* SLIDER PROJETS FINI */
+	/* Slider projets finits */
 
 	if(is_active_sidebar('slider')){ dynamic_sidebar( 'slider' ) ;} ?>
+
 	<section id="slider">
+	
 		<?php echo do_shortcode('[smartslider3 slider=2]'); ?>
+	
 	</section>
+	
 	<?php
 
-	/* TESTIMONIALS */
+	/* Témoignage */
 
 	$zerif_testimonials_show = get_theme_mod('zerif_testimonials_show');
 
@@ -223,8 +227,11 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 	/* Devenir Mécène */
 
 	$zerif_devenir_mecene_show = get_theme_mod('zerif_devenir_mecene_show');
+
 	if( isset($zerif_devenir_mecene_show) && $zerif_devenir_mecene_show != 1 ):
+
 	 	get_template_part( 'sections/devenirmecene' );
+
 	endif;
 
 }
