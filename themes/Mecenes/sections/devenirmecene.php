@@ -103,63 +103,6 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 
 					</div>
 
-					<p>
-						<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Faire un don!</button>
-					</p>
-			        <!-- Modal -->	
-			        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-			        	<div class="modal-dialog">
-			            	<div class="modal-content">
-			              		<div class="modal-header">
-			                		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			                		<h4 class="modal-title rainbow" id="gridSystemModalLabel"><b><i>Formulaire de Contact</i></b></h4>
-			              		</div>
-				              	<div class="modal-body">
-					                <form class="form-horizontal" role="form">
-										<div class="form-group">
-									    	<label class="control-label col-md-4" for="nom">Nom:</label>
-									    	<div class="col-md-6">
-									    		<input type="text" class="form-control" id="nom" required>
-									    	</div>
-									  	</div>
-									  	<div class="form-group">
-									    	<label class="control-label col-md-4" for="email">Adresse Email:</label>
-									    	<div class="col-md-6">
-									    		<input type="email" class="form-control" id="email" required>
-									    	</div>
-									  	</div>
-									  	<div class="form-group">
-									    	<label class="control-label col-md-4" for="phone">T&eacute;l&eacute;phone:</label>
-									    	<div class="col-md-6">
-									    		<input type="tel" class="form-control" id="phone" required>
-									    	</div>
-									  	</div>
-									  	<div class="form-group">
-									    	<label class="control-label col-md-4" for="objet">Objet:</label>
-									    	<div class="col-md-6">
-									    		<input type="text" class="form-control" id="objet" required>
-									    	</div>
-									  	</div>
-									  	<div class="form-group">
-									    	<label class="control-label col-md-4" for="comment">Votre message:</label>
-									    	<div class="col-md-6">
-									    		<textarea class="form-control" rows="10" id="comment"></textarea>
-									    	</div>
-									  	</div>
-									  	<div class="form-group">
-										  	<div class="col-md-6 col-md-offset-4">
-										  		<button type="submit" class="btn btn-info btn-lg">Envoyer</button>
-										  	</div>
-										</div>
-									</form>
-			            		</div>
-			        		</div><!-- /.modal-content -->
-			    		</div><!-- /.modal-dialog -->
-					</div>  <!-- Fin Modal -->
-					<?php endif; ?>
-				</div>
-
-
 					<?php endif; ?>
 
 				</div>
@@ -208,7 +151,7 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 					<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Faire un don!</button>
 				</p>
 
-		        <!-- Modal -->	
+		       <!-- Modal -->	
 		        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 		        	<div class="modal-dialog modal-lg">
 		            	<div class="modal-content">
