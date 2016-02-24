@@ -6342,14 +6342,6 @@ body.custom-background {
 **** Style.css des Mécènes ****
 ******************************/
 
-
-/* Cacher le copyright zerif */
-.zerif-copyright-box {
-	visibility: hidden;
-	width: 100%;
-    color: #666;
-}
-
 /* Qui sommes-nous */
 .about-us .big-intro {
 	font-size: 50px;
@@ -6413,4 +6405,21 @@ textarea {
 /* Taille de la police */
 .text-big {
 	font-size: 20px;
+}
+
+/* Footer padding bottom */
+.copyright p {
+	margin-bottom: 67px !important;
+	color: white;
+}
+
+/* Footer a color bottom */
+.copyright a {
+	color: white;
+}
+
+.copyright a:hover {
+    color: #e96656;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
 }
