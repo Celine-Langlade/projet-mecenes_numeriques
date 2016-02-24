@@ -148,40 +148,54 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 			echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . '" data-scrollreveal="enter left after 0s over 2s">'; ?>
 
 				<p>
-					<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Faire un don!</button>
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Faire un don!</button>
 				</p>
 
 		       <!-- Modal -->	
 		        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-		        	<div class="modal-dialog modal-lg">
+		        	<div class="modal-dialog">
 		            	<div class="modal-content">
 		              		<div class="modal-header">
 		                		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		                		<h4 class="modal-title rainbow" id="gridSystemModalLabel"><i>Formulaire de Contact</i></h4>
 		              		</div>
 			              	<div class="modal-body">
-				                <form role="form">
+				                <form class="form-horizontal" role="form">
 									<div class="form-group">
-								    	<label for="nom">Nom:</label>
-								    	<input type="text" class="form-control" id="nom">
+								    	<label class="control-label col-md-4" for="nom">Nom:</label>
+								    	<div class="col-md-6">
+								    		<input type="text" class="form-control" id="nom" placeholder="votre nom" required>
+								    	</div>
 								  	</div>
 								  	<div class="form-group">
-								    	<label for="email">Adresse Email:</label>
-								    	<input type="email" class="form-control" id="email">
+								    	<label class="control-label col-md-4" for="email">Adresse Email:</label>
+								    	<div class="col-md-6">
+								    		<input type="email" class="form-control" id="email" placeholder="jhondoe@example.com" required>
+								    	</div>
 								  	</div>
 								  	<div class="form-group">
-								    	<label for="phone">T&eacute;l&eacute;phone:</label>
-								    	<input type="tel" class="form-control" id="phone">
+								    	<label class="control-label col-md-4" for="phone">T&eacute;l&eacute;phone:</label>
+								    	<div class="col-md-6">
+								    		<input type="tel" class="form-control" id="phone" placeholder="0450699887" required>
+								    	</div>
 								  	</div>
 								  	<div class="form-group">
-								    	<label for="objet">Objet:</label>
-								    	<input type="text" class="form-control" id="objet">
+								    	<label class="control-label col-md-4" for="objet">Objet:</label>
+								    	<div class="col-md-6">
+								    		<input type="text" class="form-control" id="objet" placeholder="" required>
+								    	</div>
 								  	</div>
 								  	<div class="form-group">
-								    	<label for="comment">Votre message:</label>
-								    	<textarea class="form-control" rows="10" id="comment"></textarea>
+								    	<label class="control-label col-md-4" for="comment">Votre message:</label>
+								    	<div class="col-md-6">
+								    		<textarea class="form-control" rows="10" id="comment" placeholder="" required></textarea>
+								    	</div>
 								  	</div>
-								  	<button type="submit" class="btn btn-success btn-lg">Envoyer</button>
+								  	<div class="form-group">
+									  	<div class="col-md-6 col-md-push-4">
+									  		<button type="submit" class="btn btn-info btn-lg">Envoyer</button>
+									  	</div>
+									</div>
 								</form>
 		            		</div>
 		        		</div><!-- /.modal-content -->
