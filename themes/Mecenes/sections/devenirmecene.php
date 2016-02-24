@@ -18,23 +18,34 @@ My name is Merely Ducard but I speak for Ra's al Ghul... a man greatly feared by
 			$zerif_devenir_mecene_entreprise_text = get_theme_mod('zerif_devenir_mecene_entreprise_text',__('Entreprise','zerif-lite'));
 			$zerif_devenir_mecene_particulier_text = get_theme_mod('zerif_devenir_mecene_particulier_text',__('Particulier','zerif-lite'));
 
-			if( !empty($zerif_devenir_mecene_title) ):
-				echo '<h2 class="white-text">'. wp_kses_post( $zerif_devenir_mecene_title ) .'</h2>';
-			elseif ( isset( $wp_customize ) ):	
-				echo '<h2 class="white-text zerif_hidden_if_not_customizer"></h2>';
-			endif;
+			switch (
+				(empty($zerif_devenir_mecene_entreprise_title) ? 0 : 1)
+				+ (empty($zerif_devenir_mecene_particulier_title) ? 0 : 1)
+				) {
+				case 2:
+					$colCount = 6;
+					break;
+				default:
+					$colCount = 12;
+			}
+
+
 
 			?>
 
 			<div class="row">
 
 			<?php
-			$colCount = 12;
 
+			if( !empty($zerif_devenir_mecene_title) ):
+				echo '<h2 class="white-text">'. wp_kses_post( $zerif_devenir_mecene_title ) .'</h2>';
+			elseif ( isset( $wp_customize ) ):	
+				echo '<h2 class="white-text zerif_hidden_if_not_customizer"></h2>';
+			endif;
 
 			if( !empty($zerif_devenir_mecene_text) ):
 
-				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . '" data-scrollreveal="enter bottom after 0s over 1s">';
+				echo '<div class="col-lg-12 col-md-12" data-scrollreveal="enter bottom after 0s over 1s">';
 
 					echo '<p>';
 
@@ -52,14 +63,13 @@ My name is Merely Ducard but I speak for Ra's al Ghul... a man greatly feared by
 
 			<div class="row">
 
-				<div class="col-ld-6 col-md-6">
+				<?php if( !empty( $zerif_devenir_mecene_entreprise_title ) ):
 
-					<?php if( !empty( $zerif_devenir_mecene_entreprise_title ) ): ?>
+				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . '" data-scrollreveal="enter bottom after 0s over 1s">'; ?>
 
 					<h3><?php echo wp_kses_post( $zerif_devenir_mecene_entreprise_title ); ?></h3>
 
-					<?php endif;
-					if( !empty($zerif_devenir_mecene_entreprise_text) ): ?>
+					<?php if( !empty($zerif_devenir_mecene_entreprise_text) ): ?>
 
 					<div class="text-center">
 
@@ -68,22 +78,57 @@ My name is Merely Ducard but I speak for Ra's al Ghul... a man greatly feared by
 						</p>
 
 					</div>
-
+					<p>
+						<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Faire un don!</button>
+					</p>
+			        <!-- Modal -->	
+			        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			        	<div class="modal-dialog modal-lg">
+			            	<div class="modal-content">
+			              		<div class="modal-header">
+			                		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			                		<h4 class="modal-title rainbow" id="gridSystemModalLabel"><i>Formulaire de Contact</i></h4>
+			              		</div>
+				              	<div class="modal-body">
+					                <form role="form">
+										<div class="form-group">
+									    	<label for="nom">Nom:</label>
+									    	<input type="text" class="form-control" id="nom">
+									  	</div>
+									  	<div class="form-group">
+									    	<label for="email">Adresse Email:</label>
+									    	<input type="email" class="form-control" id="email">
+									  	</div>
+									  	<div class="form-group">
+									    	<label for="phone">T&eacute;l&eacute;phone:</label>
+									    	<input type="tel" class="form-control" id="phone">
+									  	</div>
+									  	<div class="form-group">
+									    	<label for="objet">Objet:</label>
+									    	<input type="text" class="form-control" id="objet">
+									  	</div>
+									  	<div class="form-group">
+									    	<label for="comment">Votre message:</label>
+									    	<textarea class="form-control" rows="10" id="comment"></textarea>
+									  	</div>
+									  	<button type="submit" class="btn btn-success btn-lg">Envoyer</button>
+									</form>
+			            		</div>
+			        		</div><!-- /.modal-content -->
+			    		</div><!-- /.modal-dialog -->
+					</div>  <!-- Fin Modal -->
 					<?php endif; ?>
-
-					<button class="btn">Faire un don!</button>
-
 				</div>
 
+				<?php endif;
 
-				<div class="col-ld-6 col-md-6">
+				if( !empty($zerif_devenir_mecene_particulier_title) ):
 
-					<?php if( !empty($zerif_devenir_mecene_particulier_title) ): ?>
+				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . '" data-scrollreveal="enter bottom after 0s over 1s">'; ?>
 
 					<h3><?php echo wp_kses_post( $zerif_devenir_mecene_particulier_title ); ?></h3>
 
-					<?php endif;
-					if( !empty($zerif_devenir_mecene_particulier_text) ): ?>
+					<?php if( !empty($zerif_devenir_mecene_particulier_text) ): ?>
 
 					<div class="text-center">
 
@@ -95,9 +140,11 @@ My name is Merely Ducard but I speak for Ra's al Ghul... a man greatly feared by
 
 					<?php endif; ?>
 
-					<button class="btn">Faire un don!</button>
+					<button class="btn btn-default btn-lg">Faire un don!</button>
 
 				</div>
+
+				<?php endif; ?>
 
 			</div>
 

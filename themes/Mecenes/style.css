@@ -456,7 +456,7 @@ thead th{
 	color: #404040;
 }
 .white-text {
-	color: #FFFFFF;
+	color: white;
 }
 /*---------------------------------------
  **   BORDER BOTTOMS                 -----
@@ -1342,7 +1342,7 @@ object {
  **   Header               -----
 -----------------------------------------*/
 /*** HEADERS ***/
-.focus,.works,.about-us,.features,.packages,.products,.testimonial,.contact-us {
+.focus,.works,.about-us, .features,.packages,.products,.devenir_mecene, .testimonial,.contact-us {
 	padding-top: 100px;
 }
 .section-header {
@@ -2112,6 +2112,9 @@ width: -webkit-calc(100% / 4);
 	display: none !important;
 }
 
+
+
+
 /* media queries:  change number of items per row */
 @media screen and (max-width: 1190px) {
 	.cbp-rfgrid li {
@@ -2179,7 +2182,7 @@ width: -webkit-calc(100% / 4);
  **   Section: About us;              -----
 -----------------------------------------*/
 .about-us {
-	background: #272727;
+	background: #6E7A7F;
 	color: #FFF;
 }
 .about-us .row {
@@ -2197,8 +2200,8 @@ width: -webkit-calc(100% / 4);
 	color: #FFF;
 }
 .about-us p {
-	text-align: left;
-	color: #939393;
+	text-align: center;
+	color: #FFF;
 	font-size: 14px;
 	line-height: 25px;
 }
@@ -2756,7 +2759,7 @@ width: -webkit-calc(100% / 4);
  **   Testimonial           -----
 -----------------------------------------*/
 .testimonial {
-	background: #8c7620;
+	background: #6E7A7F;
 	padding-bottom: 90px;
 }
 .testimonial .section-header .section-legend {
@@ -2937,7 +2940,7 @@ width: -webkit-calc(100% / 4);
  **   Footer           -----
 -----------------------------------------*/
 #footer {
-	background: #272727;
+	background: #3E3A3A;
 	line-height: 20px;
 }
 .company-details {
@@ -2946,7 +2949,7 @@ width: -webkit-calc(100% / 4);
 	padding-bottom: 30px;
 }
 .company-details a {
-	color:#939393;
+	color: white;
 	text-decoration:none;
 }
 
@@ -2960,7 +2963,7 @@ width: -webkit-calc(100% / 4);
 .copyright {
 	padding-top: 68px;
 	padding-bottom: 68px;
-	background: #171717;
+	background: #3E3A3A;
 }
 .social {
 	margin: 0 0 1.5em 0 !important;
@@ -2970,7 +2973,7 @@ width: -webkit-calc(100% / 4);
 	margin: 5px;
 }
 .social li a {
-	color: #939393;
+	color: white;
 	font-size: 18px;
 }
 .social li a:hover {
@@ -2980,6 +2983,12 @@ width: -webkit-calc(100% / 4);
 	margin-bottom: 0;
 	color: #939393;
 }
+
+/* logo facebook */
+.fa {
+	color: #3B579D;
+}
+
 .footer-widget-wrap > .container {
 	text-align: center;
 }
@@ -6338,11 +6347,6 @@ body.custom-background {
 	color: #000;
 }
 
-.testimonial {
-	background: #ecf0f1 !important;
-}
-
-
  .widget_dvm .section-header{
  	color: #FFF;
  }
@@ -6363,15 +6367,18 @@ body.custom-background {
 	font-size: 20px;
 }
 
-
-
-
-
-
-.devenir_mecene {
-	background: #8c7620;
+.devenir_mecene
+{
+	background-color: #FFF;
 	padding-bottom: 90px;
 }
-.devenir_mecene .section-header .section-legend {
-	color: #FFF;
+
+.devenir_mecene h2
+{
+	color: #404040;
+}
+
+.devenir_mecene p
+{
+	color: #808080;
 }
