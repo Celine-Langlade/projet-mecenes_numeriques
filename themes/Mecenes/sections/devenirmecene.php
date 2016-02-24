@@ -63,9 +63,9 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 
 			if( !empty($zerif_devenir_mecene_text) ):
 
-				echo '<div class="col-lg-12 col-md-12 text-big" data-scrollreveal="enter top after 0s over 1s">';
+				echo '<div class="col-lg-12 col-md-12" data-scrollreveal="enter top after 0s over 1s">';
 
-					echo '<p>';
+					echo '<p class="text-big">';
 
 						echo wp_kses_post( $zerif_devenir_mecene_text );
 
@@ -211,7 +211,7 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 
 			echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . '" data-scrollreveal="enter right after 0s over 2s">'; ?>
 
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 					<input type="hidden" name="cmd" value="_donations">
 					<input type="hidden" name="business" value="<?php echo $zerif_devenir_mecene_paypal_id; ?>">
 					<input type="hidden" name="lc" value="FR">

@@ -6336,27 +6336,21 @@ body.custom-background {
 
 }
 
-.widget_dvm {
-	background: white;
-	margin: 0px;
-	padding-top: 100px;
-	padding-bottom: 90px;
-}
 
-.widget_dvm h2 {
-	color: #000;
-}
 
- .widget_dvm .section-header{
- 	color: #FFF;
- }
+/******************************
+**** Style.css des Mécènes ****
+******************************/
 
+
+/* Cacher le copyright zerif */
 .zerif-copyright-box {
 	visibility: hidden;
 	width: 100%;
     color: #666;
 }
 
+/* Qui sommes-nous */
 .about-us .big-intro {
 	font-size: 50px;
 	/* text-align: left; */
@@ -6367,6 +6361,7 @@ body.custom-background {
 	font-size: 20px;
 }
 
+/* Devenir mécène */
 .devenir_mecene
 {
 	background-color: #FFF;
@@ -6383,6 +6378,7 @@ body.custom-background {
 	color: #808080;
 }
 
+/* Modal formulaire */
 textarea {
 	resize: none;
 }
@@ -6396,11 +6392,6 @@ textarea {
 	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
 }
-
-/*.input-group[class*="col-"] {
-    padding-right: 15px;
-    padding-left: 15px;
-}*/
 
 .modal-header, .btn-custom {
     color: #23282B;
@@ -6419,6 +6410,7 @@ textarea {
     border-radius: 40px !important; 
 }
 
+/* Taille de la police */
 .text-big {
 	font-size: 20px;
 }
