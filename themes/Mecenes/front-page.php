@@ -204,16 +204,19 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 	/* Slider projets finits */
 
-	if(is_active_sidebar('slider')){ dynamic_sidebar( 'slider' ) ;} ?>
+	?>
 
-	<section id="slider">
-	
-		<?php echo do_shortcode('[smartslider3 slider=2]'); ?>
-	
+	<section class="slider" id="slider">
+
+			<div class="section-header">
+
+				<h2>Nos réalisations</h2>
+
+			</div>
+
 	</section>
-	
-	<?php
 
+	<?php echo do_shortcode('[smartslider3 slider=2]'); 
 	/* Témoignage */
 
 	$zerif_testimonials_show = get_theme_mod('zerif_testimonials_show');

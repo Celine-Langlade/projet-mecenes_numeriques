@@ -82,7 +82,7 @@
 
 				echo '<div class="col-md-4 col-ld-4">';
 					if(!empty($zerif_socials_facebook)):
-						echo '<ul class="social">';
+						echo '<ul class="social go-up-facebook">';
 						
 						/* facebook */
 						if( !empty($zerif_socials_facebook) ):
@@ -115,13 +115,21 @@
 				echo '</div>';
 
 				echo '<div class="col-md-4 col-ld-4">';
-
-					echo '<div class="zerif-copyright-box"><a href="http://www.wildcodeschool.fr" target="_blank"><img src="img/WCS-logo.png" alt="Wild Code School logo" /></a></div>';
 					if( !empty($zerif_copyright) ):
-						echo '<p id="zerif-copyright"><a href="http://www.wildcodeschool.fr" target="_blank">'.wp_kses_post($zerif_copyright).'</a></p>';
+						echo '<p id="zerif-copyright" class="go-up-wcs"><a href="http://www.wildcodeschool.fr" target="_blank">'.wp_kses_post($zerif_copyright).'</a></p>';
 					elseif( isset( $wp_customize ) ):
 						echo '<p id="zerif-copyright" class="zerif_hidden_if_not_customizer"></p>';
 					endif;
+					echo '<div class="zerif-copyright-box"><a href="http://www.wildcodeschool.fr" target="_blank"><img src="img/WCS-logo.png" alt="Wild Code School logo" /></a></div>';
+				echo '</div>';
+
+			echo '</div>';
+
+			echo '<div class="mentions-legales">';
+
+				echo '<div class="row">';
+
+					echo '<a href="http://www.wildcodeschool.fr">Mentions légales</a>';
 
 				echo '</div>';
 

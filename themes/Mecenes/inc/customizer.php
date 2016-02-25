@@ -278,13 +278,13 @@ function zerif_customize_register( $wp_customize ) {
 		)));
 
 	/************************************/
-	/**** SECTION QUI SOMMES-NOUS *******/
+	/****       NOS MISSIONS      *******/
 	/************************************/
 	
 		$wp_customize->add_panel( 'panel_about', array(
 			'priority' => 102,
 			'capability' => 'edit_theme_options',
-			'title' => __( 'Section qui sommes-nous?', 'zerif-lite' )
+			'title' => __( 'Section nos missions', 'zerif-lite' )
 		));
 		
 		$wp_customize->add_section( 'zerif_aboutus_settings_section' , array(
@@ -301,7 +301,7 @@ function zerif_customize_register( $wp_customize ) {
 		
 		$wp_customize->add_control( 'zerif_aboutus_show', array(
 			'type' => 'checkbox',
-			'label' => __('Cacher la section qui sommes-nous?','zerif-lite'),
+			'label' => __('Cacher la section nos missions?','zerif-lite'),
 			'section' => 'zerif_aboutus_settings_section',
 			'priority'    => 1,
 		));
@@ -315,12 +315,12 @@ function zerif_customize_register( $wp_customize ) {
 		/* title */
 		$wp_customize->add_setting( 'zerif_aboutus_title', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
-			'default' => __('Qui-sommes-nous?','zerif-lite'),
+			'default' => __('nos missions?','zerif-lite'),
 			'transport' => 'postMessage'
 		));
 		
 		$wp_customize->add_control( 'zerif_aboutus_title', array(
-			'label'    => __( 'Title', 'zerif-lite' ),
+			'label'    => __( 'Titre', 'zerif-lite' ),
 			'section'  => 'zerif_aboutus_main_section',
 			'priority'    => 2,
 		));
@@ -332,7 +332,7 @@ function zerif_customize_register( $wp_customize ) {
 		));
 		
 		$wp_customize->add_control( 'zerif_aboutus_biglefttitle', array(
-			'label'    => __( 'Sous-titre de la section qui sommes-nous?', 'zerif-lite' ),
+			'label'    => __( 'Sous-titre de la section nos missions?', 'zerif-lite' ),
 			'section'  => 'zerif_aboutus_main_section',
 			'priority'    => 4,
 		));

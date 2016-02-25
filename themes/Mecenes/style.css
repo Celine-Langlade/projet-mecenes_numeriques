@@ -1342,7 +1342,8 @@ object {
  **   Header               -----
 -----------------------------------------*/
 /*** HEADERS ***/
-.focus,.works,.about-us, .features,.packages,.products,.devenir_mecene, .testimonial,.contact-us {
+.focus,.works,.about-us, .features,.packages,.products,.devenir_mecene, .testimonial,.contact-us, 
+.slider {
 	padding-top: 100px;
 }
 .section-header {
@@ -6353,6 +6354,20 @@ body.custom-background {
 	font-size: 20px;
 }
 
+/* Slider */
+
+.slider {
+	background: #6E7A7F;
+	color: #FFF;
+}
+.slider .row {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.slider .section-header {
+	color: #FFF;
+}
+
 /* Devenir mécène */
 .devenir_mecene
 {
@@ -6407,18 +6422,39 @@ textarea {
 	font-size: 20px;
 }
 
-/* Footer padding bottom */
-.copyright p {
-	margin-bottom: 67px !important;
-	color: white;
-}
-
-/* Footer a color bottom */
+/* Footer a color */
 .copyright a {
 	color: white;
 }
 
+/* Footer a hover color */
 .copyright a:hover {
+    color: #e96656;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
+}
+
+/* Footer facebook go up */
+.go-up-facebook
+{
+	position: relative;
+	top: -8px;
+}
+
+/* Footer facebook wcs up */
+.go-up-wcs
+{
+	position: relative;
+	top: -4px;
+}
+
+/* Footer mentions-legales */
+.mentions-legales a {
+	color: white;
+	font-size: 12px;
+}
+
+.mentions-legales a:hover {
     color: #e96656;
     -webkit-transition: all 700ms;
     transition: all 700ms;
