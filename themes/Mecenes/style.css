@@ -1342,8 +1342,7 @@ object {
  **   Header               -----
 -----------------------------------------*/
 /*** HEADERS ***/
-.focus,.works,.about-us, .features,.packages,.products,.devenir_mecene, .testimonial,.contact-us, 
-.slider {
+.focus, .works, .about-us, .features, .packages, .products, .devenir_mecene, .testimonial,.contact-us {
 	padding-top: 100px;
 }
 .section-header {
@@ -6357,7 +6356,8 @@ body.custom-background {
 /* Slider */
 
 .slider {
-	background: #2F7D91;
+	padding-top: 10px;
+	background: #6E7A7F;
 	color: #FFF;
 }
 .slider .row {
@@ -6365,6 +6365,7 @@ body.custom-background {
 	margin-right: -15px;
 }
 .slider .section-header {
+	padding-bottom: 10px;
 	color: #FFF;
 }
 
@@ -6438,7 +6439,7 @@ textarea {
 .go-up-facebook
 {
 	position: relative;
-	top: -8px;
+	top: 18.5px;
 }
 
 /* Footer facebook wcs up */
