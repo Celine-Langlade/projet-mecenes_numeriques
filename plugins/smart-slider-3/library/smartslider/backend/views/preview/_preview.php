@@ -40,8 +40,10 @@ N2JS::addFirstCode("
 
         autoHeight();
         n2(window).on('resize', autoHeight);
-        n2('.n2-ss-slider').on('SliderResize', autoHeight)
-            .data('ss').ready(autoHeight);
+        n2('.n2-ss-slider').on('SliderResize', autoHeight);
+        window[n2('.n2-ss-slider').attr('id')].startedDeferred.done(function(slider){
+            slider.ready(autoHeight);
+        });
 ");
 
 ?>

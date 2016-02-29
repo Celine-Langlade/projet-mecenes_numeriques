@@ -312,7 +312,7 @@ function zerif_customize_register( $wp_customize ) {
 			'panel' => 'panel_about'
 		));
 		
-		/* title */
+		/* titre */
 		$wp_customize->add_setting( 'zerif_aboutus_title', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
 			'default' => __('nos missions?','zerif-lite'),
@@ -325,7 +325,7 @@ function zerif_customize_register( $wp_customize ) {
 			'priority'    => 2,
 		));
 		
-		/* big left title */
+		/* Sous-titre nos missions */
 		$wp_customize->add_setting( 'zerif_aboutus_biglefttitle', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
 			'default' => __('Lorem ipsum dolor sit amet.','zerif-lite'),
@@ -343,11 +343,11 @@ function zerif_customize_register( $wp_customize ) {
 			'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','zerif-lite'),
 		));
 		
-		$wp_customize->add_control( 'zerif_aboutus_text', array(
+		$wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_aboutus_text', array(
 			'label'    => __( 'Texte 1ère colonne', 'zerif-lite' ),
 			'section'  => 'zerif_aboutus_main_section',
 			'priority'    => 5,
-		));
+		)));
 		
 		/* text 2 */
 		$wp_customize->add_setting( 'zerif_aboutus_text_2', array(
@@ -355,11 +355,11 @@ function zerif_customize_register( $wp_customize ) {
 			'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','zerif-lite'),
 		));
 		
-		$wp_customize->add_control( 'zerif_aboutus_text_2', array(
+		$wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_aboutus_text_2', array(
 			'label'    => __( 'Texte 2ère colonne', 'zerif-lite' ),
 			'section'  => 'zerif_aboutus_main_section',
 			'priority'    => 5,
-		));
+		)));
 		
 		/* text 3 */
 		$wp_customize->add_setting( 'zerif_aboutus_text_3', array(
@@ -367,11 +367,11 @@ function zerif_customize_register( $wp_customize ) {
 			'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','zerif-lite'),
 		));
 		
-		$wp_customize->add_control( 'zerif_aboutus_text_3', array(
+		$wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_aboutus_text_3', array(
 			'label'    => __( 'Texte 3ère colonne', 'zerif-lite' ),
 			'section'  => 'zerif_aboutus_main_section',
 			'priority'    => 5,
-		));
+		)));
 
 	/********************************************************************/
 	/********************  NOS MECENES **********************************/
@@ -422,24 +422,24 @@ function zerif_customize_register( $wp_customize ) {
 			'transport' => 'postMessage'
 		));
 		
-		$wp_customize->add_control( 'zerif_ourfocus_subtitle', array(
+		$wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_ourfocus_subtitle', array(
 			'label'    => __( 'Sous-titre de la section nos mécènes', 'zerif-lite' ),
 			'section'  => 'zerif_ourfocus_section',
 			'priority'    => 3,
-		));
+		)));
 	
 	/**********************************************/
-    /***********	SECTION TEMOIGNAGES ************/
+    /***********   SECTION TEMOIGNAGES  ***********/
 	/**********************************************/
 	
 		$wp_customize->add_panel( 'panel_testimonials', array(
 			'priority' => 104,
 			'capability' => 'edit_theme_options',
-			'title' => __( 'Section témoignage', 'zerif-lite' )
+			'title' => __( 'Section Témoignages', 'zerif-lite' )
 		) );
 		
 		$wp_customize->add_section( 'zerif_testimonials_section' , array(
-			'title'       => __( 'Section témoignage', 'zerif-lite' ),
+			'title'       => __( 'Section Témoignages', 'zerif-lite' ),
 			'priority'    => 1,
 			'panel'       => 'panel_testimonials'
 		));
@@ -452,7 +452,7 @@ function zerif_customize_register( $wp_customize ) {
 		
 		$wp_customize->add_control( 'zerif_testimonials_show', array(
 			'type' => 'checkbox',
-			'label' => __('Cacher la section témoignage?','zerif-lite'),
+			'label' => __('Cacher la section témoignages?','zerif-lite'),
 			'section' => 'zerif_testimonials_section',
 			'priority'    => 1,
 		));
@@ -488,11 +488,11 @@ function zerif_customize_register( $wp_customize ) {
 			'transport' => 'postMessage'
 		));
 		
-		$wp_customize->add_control( 'zerif_testimonials_subtitle', array(
+		$wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_testimonials_subtitle', array(
 			'label'    => __( 'Sous-titre témoignage', 'zerif-lite' ),
 			'section'  => 'zerif_testimonials_section',
 			'priority'    => 3,
-		));	
+		)));	
 
 	/**********************************************/
     /**********	   Devenir Mecene    **************/
@@ -529,7 +529,7 @@ function zerif_customize_register( $wp_customize ) {
 			'panel' => 'panel_devenir_mecene'
 		));
 		
-		/* Devenir mécène title */
+		/* Devenir mécène titre */
 		$wp_customize->add_setting( 'zerif_devenir_mecene_title', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
 			'default' => __('Devenir Mécènes','zerif-lite'),
@@ -548,11 +548,11 @@ function zerif_customize_register( $wp_customize ) {
 			'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','zerif-lite'),
 		));
 		
-		$wp_customize->add_control( 'zerif_devenir_mecene_text', array(
+		$wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_devenir_mecene_text', array(
 			'label'    => __( 'Texte de devenir mécène', 'zerif-lite' ),
 			'section'  => 'zerif_devenir_mecene_main_section',
 			'priority'    => 2,
-		));
+		)));
 
 		/* Title de devenir mécène entreprise*/
 		$wp_customize->add_setting( 'zerif_devenir_mecene_entreprise_title', array(
@@ -566,6 +566,18 @@ function zerif_customize_register( $wp_customize ) {
 			'priority'    => 3,
 		));
 
+		/* Text de devenir mécène entreprise */
+		$wp_customize->add_setting( 'zerif_devenir_mecene_entreprise_text', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'default' => __('Texte de la colonne entreprise','zerif-lite'),
+		));
+		
+		$wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_devenir_mecene_entreprise_text', array(
+			'label'    => __( 'Texte de la colonne entreprise', 'zerif-lite' ),
+			'section'  => 'zerif_devenir_mecene_main_section',
+			'priority'    => 4,
+		)));
+
 		/* Title de devenir mécène particulier */
 		$wp_customize->add_setting( 'zerif_devenir_mecene_particulier_title', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
@@ -574,18 +586,6 @@ function zerif_customize_register( $wp_customize ) {
 		
 		$wp_customize->add_control( 'zerif_devenir_mecene_particulier_title', array(
 			'label'    => __( 'Titre de la colonne particulier', 'zerif-lite' ),
-			'section'  => 'zerif_devenir_mecene_main_section',
-			'priority'    => 4,
-		));
-
-		/* Text de devenir mécène entreprise */
-		$wp_customize->add_setting( 'zerif_devenir_mecene_entreprise_text', array(
-			'sanitize_callback' => 'zerif_sanitize_text',
-			'default' => __('Texte de la colonne entreprise','zerif-lite'),
-		));
-		
-		$wp_customize->add_control( 'zerif_devenir_mecene_entreprise_text', array(
-			'label'    => __( 'Texte de la colonne entreprise', 'zerif-lite' ),
 			'section'  => 'zerif_devenir_mecene_main_section',
 			'priority'    => 5,
 		));
@@ -596,11 +596,11 @@ function zerif_customize_register( $wp_customize ) {
 			'default' => __('Texte de la colonne particulier','zerif-lite'),
 		));
 		
-		$wp_customize->add_control( 'zerif_devenir_mecene_particulier_text', array(
+		$wp_customize->add_control( new Zerif_Customize_Textarea_Control( $wp_customize, 'zerif_devenir_mecene_particulier_text', array(
 			'label'    => __( 'Texte de la colonne particulier', 'zerif-lite' ),
 			'section'  => 'zerif_devenir_mecene_main_section',
 			'priority'    => 6,
-		));
+		)));
 
 		$wp_customize->add_section( 'zerif_devenir_mecene_paypal_section' , array(
 			'title'       => __( 'Paypal', 'zerif-lite' ),

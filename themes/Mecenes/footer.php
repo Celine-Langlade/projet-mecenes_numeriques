@@ -120,7 +120,7 @@
 					elseif( isset( $wp_customize ) ):
 						echo '<p id="zerif-copyright" class="zerif_hidden_if_not_customizer"></p>';
 					endif;
-					echo '<div class="zerif-copyright-box"><a href="http://www.wildcodeschool.fr" target="_blank"><img src="img/WCS-logo.png" alt="Wild Code School logo" /></a></div>';
+					echo '<div class="zerif-copyright-box"><a href="http://www.wildcodeschool.fr" target="_blank"><img src="http://ibangf.ovh/lesmecenes/img/WCS-logo.png" alt="Wild Code School logo" /></a></div>';
 				echo '</div>';
 
 			echo '</div>';

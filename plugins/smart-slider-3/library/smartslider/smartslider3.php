@@ -3,7 +3,7 @@
 class N2SS3
 {
 
-    public static $version = '3.0.21';
+    public static $version = '3.0.24';
 
     public static $product = 'smartslider3';
 

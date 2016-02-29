@@ -691,7 +691,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: #cb4332;
+	color: #428BCA;
 }
 /*---------------------------------------
  **   5.2 Menus                  -----
@@ -6342,6 +6342,13 @@ body.custom-background {
 **** Style.css des Mécènes ****
 ******************************/
 
+
+a:hover,
+a:focus,
+a:active {
+	color: #428BCA;
+}
+
 /* Qui sommes-nous */
 .about-us .big-intro {
 	font-size: 50px;
@@ -6351,6 +6358,10 @@ body.custom-background {
 
 .about-us p {
 	font-size: 20px;
+}
+
+.about-us .icone img {
+	max-height: 100px;
 }
 
 /* Slider */
@@ -6430,9 +6441,13 @@ textarea {
 
 /* Footer a hover color */
 .copyright a:hover {
-    color: #e96656;
+    color: #428BCA;
     -webkit-transition: all 700ms;
     transition: all 700ms;
+}
+
+.social li a:hover {
+    color: #428BCA;
 }
 
 /* Footer facebook go up */
@@ -6456,7 +6471,7 @@ textarea {
 }
 
 .mentions-legales a:hover {
-    color: #e96656;
+    color: #428BCA;
     -webkit-transition: all 700ms;
     transition: all 700ms;
 }

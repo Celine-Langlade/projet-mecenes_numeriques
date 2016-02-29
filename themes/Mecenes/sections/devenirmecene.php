@@ -148,7 +148,7 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 			echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . '" data-scrollreveal="enter left after 0s over 2s">'; ?>
 
 				<p>
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Faire un don!</button>
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Je fais un dons don</button>
 				</p>
 
 		       <!-- Modal -->	
@@ -221,6 +221,7 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 					<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
 					<button type="submit" type="submit" class="btn btn-success btn-lg" name="submit" title="donner"><?php echo $zerif_devenir_mecene_paypal_boutton_text; ?></button>
 				</form>
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Je fais un dons don</button>
 
 			</div>
 

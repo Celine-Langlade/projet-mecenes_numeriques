@@ -102,8 +102,12 @@ class n2lessc
 
         $url = $this->compileValue($this->lib_e($str));
 
+        if(isset($this->registeredVars[$url])){
+            $url = $this->registeredVars[$url];
+        }
+
         // don't import if it ends in css
-        if (substr_compare($url, '.css', -4, 4) === 0) return false;
+        if (strlen($url) >=4 && substr_compare($url, '.css', -4, 4) === 0) return false;
 
         $realPath = $this->findImport($url);
         if ($realPath === null) return false;

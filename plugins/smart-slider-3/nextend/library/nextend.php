@@ -19,7 +19,7 @@ class N2
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $posts + $posts_default);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5); 
-                curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+                curl_setopt($ch, CURLOPT_TIMEOUT, 30);
                 $data            = curl_exec($ch);
                 $contentType     = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
                 $error           = curl_error($ch);

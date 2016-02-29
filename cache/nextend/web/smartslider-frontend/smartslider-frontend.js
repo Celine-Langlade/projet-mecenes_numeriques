@@ -555,14 +555,18 @@
 })(n2, window);
 (function ($, scope, undefined) {
 
-    $.fn.waitUntilExists    = function (handler, shouldRunHandlerOnce, isChild) {
-        var found       = 'found';
-        var $this       = $(this.selector);
-        var $elements   = $this.not(function () { return $(this).data(found); }).each(handler).data(found, true);
-    
-        if (!isChild){
+    $.fn.waitUntilExists = function (handler, shouldRunHandlerOnce, isChild) {
+        var found = 'found';
+        var $this = $(this.selector);
+        var $elements = $this.not(function () {
+            return $(this).data(found);
+        }).each(handler).data(found, true);
+
+        if (!isChild) {
             (window.waitUntilExists_Intervals = window.waitUntilExists_Intervals || {})[this.selector] =
-                window.setInterval(function () { $this.waitUntilExists(handler, shouldRunHandlerOnce, true); }, 500);
+                window.setInterval(function () {
+                    $this.waitUntilExists(handler, shouldRunHandlerOnce, true);
+                }, 500);
         } else if (shouldRunHandlerOnce && $elements.length) {
             window.clearInterval(window.waitUntilExists_Intervals[this.selector]);
         }
@@ -581,17 +585,17 @@
         if (window[id] && window[id] instanceof NextendSmartSliderAbstract) {
             return false;
         }
-        
+
         // Register our object to a global variable
         window[id] = this;
-        
-        $(elementID).waitUntilExists($.proxy(function(){
+
+        $(elementID).waitUntilExists($.proxy(function () {
             var sliderElement = $(elementID);
-    
+
             // Store them as we might need to change them back
             this.nextCarousel = this.next;
             this.previousCarousel = this.previous;
-    
+
             if (sliderElement.prop('tagName') == 'SCRIPT') {
                 var dependency = sliderElement.data('dependency'),
                     delay = sliderElement.data('delay'),
@@ -1154,21 +1158,23 @@
                 this.callOnSlide(currentSlide, 'playOut');
             }, this));
         }
-        this.sliderElement.on('mainAnimationStart', $.proxy(this.onMainAnimationStartSyncLayers, this, this.parameters.layerMode));
 
+
+        this.sliderElement.on('mainAnimationStart', $.proxy(this.onMainAnimationStartSyncLayers, this, this.parameters.layerMode))
+            .on('reverseModeEnabled', $.proxy(this.onMainAnimationStartSyncLayersReverse, this, this.parameters.layerMode));
     };
 
     NextendSmartSliderAbstract.prototype.onMainAnimationStartSyncLayers = function (layerMode, e, animation, previousSlideIndex, currentSlideIndex) {
         var inSlide = this.slides.eq(currentSlideIndex),
             outSlide = this.slides.eq(previousSlideIndex);
         if (layerMode.inAnimation == 'mainInStart') {
-            inSlide.on('mainAnimationStartIn.layers', $.proxy(function () {
-                inSlide.off('mainAnimationStartIn.layers');
+            inSlide.one('mainAnimationStartIn.layers', $.proxy(function () {
+                inSlide.off('mainAnimationStartInCancel.layers');
                 this.callOnSlide(inSlide, 'playIn');
             }, this));
         } else if (layerMode.inAnimation == 'mainInEnd') {
-            inSlide.on('mainAnimationCompleteIn.layers', $.proxy(function () {
-                inSlide.off('mainAnimationCompleteIn.layers');
+            inSlide.one('mainAnimationCompleteIn.layers', $.proxy(function () {
+                inSlide.off('mainAnimationStartInCancel.layers');
                 this.callOnSlide(inSlide, 'playIn');
             }, this));
         }
@@ -1183,6 +1189,30 @@
                 }
             }, this));
         }
+
+        inSlide.one('mainAnimationStartInCancel.layers', function () {
+            inSlide.off('mainAnimationStartIn.layers');
+            inSlide.off('mainAnimationCompleteIn.layers');
+        });
+    };
+
+    NextendSmartSliderAbstract.prototype.onMainAnimationStartSyncLayersReverse = function (layerMode, e, reverseSlideIndex) {
+        var reverseSlide = this.slides.eq(reverseSlideIndex);
+        if (layerMode.inAnimation == 'mainInStart') {
+            reverseSlide.one('mainAnimationStartIn.layers', $.proxy(function () {
+                this.callOnSlide(reverseSlide, 'playIn');
+            }, this));
+        } else if (layerMode.inAnimation == 'mainInEnd') {
+            reverseSlide.one('mainAnimationCompleteIn.layers', $.proxy(function () {
+                this.sliderElement.off('mainAnimationComplete.layers');
+                this.callOnSlide(reverseSlide, 'playIn');
+            }, this));
+        }
+
+        this.sliderElement.one('mainAnimationComplete.layers', function () {
+            reverseSlide.off('mainAnimationStartIn.layers');
+            reverseSlide.off('mainAnimationCompleteIn.layers');
+        });
     };
 
     NextendSmartSliderAbstract.prototype.callOnSlide = function (slide, functionName) {
@@ -2594,6 +2624,8 @@
         this.reverseTimeline = new NextendTimeline({
             paused: true
         });
+
+        this.sliderElement.triggerHandler('reverseModeEnabled', this.reverseSlideIndex);
     };
 
     NextendSmartSliderMainAnimationAbstract.prototype.disableReverseMode = function () {
@@ -3382,7 +3414,7 @@
                 },
                 move: function (event, start, diff, speed) {
                     var direction = that._direction.measure(diff);
-                    if (that.currentAnimation === null) {
+                    if (direction != 'unknown' && that.currentAnimation === null) {
                         if (that._animation.state != 'ended') {
                             // skip the event as the current animation is still playing
                             return;
@@ -3469,6 +3501,7 @@
             down: null,
             axis: 'horizontal',
             measure: function (diff) {
+                if (diff.x == 0) return 'unknown';
                 return diff.x < 0 ? 'left' : 'right';
             },
             get: function (diff, direction) {
@@ -3496,6 +3529,7 @@
             down: 'previous',
             axis: 'vertical',
             measure: function (diff) {
+                if (diff.y == 0) return 'unknown';
                 return diff.y < 0 ? 'up' : 'down';
             },
             get: function (diff, direction) {

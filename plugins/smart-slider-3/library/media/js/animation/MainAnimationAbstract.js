@@ -39,6 +39,8 @@
         this.reverseTimeline = new NextendTimeline({
             paused: true
         });
+
+        this.sliderElement.triggerHandler('reverseModeEnabled', this.reverseSlideIndex);
     };
 
     NextendSmartSliderMainAnimationAbstract.prototype.disableReverseMode = function () {

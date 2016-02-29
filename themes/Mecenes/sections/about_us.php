@@ -53,6 +53,12 @@
 			if( !empty($zerif_aboutus_text) ):
 
 				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif_about_us_center ' . $text_and_skills . '" data-scrollreveal="enter bottom after 0s over 1s">';
+					
+					echo '<div class="icone text-center">';
+					
+						echo '<img src="http://www.ibangf.ovh/lesmecenes/img/finances.png" />';
+					
+					echo '</div>';
 
 					echo '<p class="text-big">';
 
@@ -81,6 +87,12 @@
 			if( !empty($zerif_aboutus_text_3) ):
 
 				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif_about_us_center ' . $text_and_skills . '" data-scrollreveal="enter bottom after 0s over 1s">';
+					
+					echo '<div class="icone text-center">';
+					
+						echo '<img src="http://www.ibangf.ovh/lesmecenes/img/education.png" />';
+					
+					echo '</div>';
 
 					echo '<p class="text-big">';
 

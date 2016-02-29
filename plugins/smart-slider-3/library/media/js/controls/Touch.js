@@ -29,7 +29,7 @@
                 },
                 move: function (event, start, diff, speed) {
                     var direction = that._direction.measure(diff);
-                    if (that.currentAnimation === null) {
+                    if (direction != 'unknown' && that.currentAnimation === null) {
                         if (that._animation.state != 'ended') {
                             // skip the event as the current animation is still playing
                             return;
@@ -116,6 +116,7 @@
             down: null,
             axis: 'horizontal',
             measure: function (diff) {
+                if (diff.x == 0) return 'unknown';
                 return diff.x < 0 ? 'left' : 'right';
             },
             get: function (diff, direction) {
@@ -143,6 +144,7 @@
             down: 'previous',
             axis: 'vertical',
             measure: function (diff) {
+                if (diff.y == 0) return 'unknown';
                 return diff.y < 0 ? 'up' : 'down';
             },
             get: function (diff, direction) {
