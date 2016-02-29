@@ -210,19 +210,26 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 			//Bouton particulier
 
 			echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . '" data-scrollreveal="enter right after 0s over 2s">'; ?>
-
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-					<input type="hidden" name="cmd" value="_donations">
-					<input type="hidden" name="business" value="<?php echo $zerif_devenir_mecene_paypal_id; ?>">
-					<input type="hidden" name="lc" value="FR">
-					<input type="hidden" name="item_name" value="Les mecenes du numerique">
-					<input type="hidden" name="no_note" value="0">
-					<input type="hidden" name="currency_code" value="EUR">
-					<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
-					<button type="submit" type="submit" class="btn btn-success btn-lg" name="submit" title="donner"><?php echo $zerif_devenir_mecene_paypal_boutton_text; ?></button>
-				</form>
-				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Je fais un dons don</button>
-
+				<div class="row">
+					<div class="col-lg-4 col-md-4">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+							<input type="hidden" name="cmd" value="_donations">
+							<input type="hidden" name="business" value="<?php echo $zerif_devenir_mecene_paypal_id; ?>">
+							<input type="hidden" name="lc" value="FR">
+							<input type="hidden" name="item_name" value="Les mecenes du numerique">
+							<input type="hidden" name="no_note" value="0">
+							<input type="hidden" name="currency_code" value="EUR">
+							<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+							<button type="submit" type="submit" class="btn btn-success btn-lg" name="submit" title="donner"><?php echo $zerif_devenir_mecene_paypal_boutton_text; ?></button>
+						</form>
+					</div>
+					<div class="col-lg-4 col-md-4">
+						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">chèque</button>
+					</div>
+					<div class="col-lg-4 col-md-4">
+						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">contact</button>
+					</div>
+				</div>
 			</div>
 
 			<?php endif; ?>
