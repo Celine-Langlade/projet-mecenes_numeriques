@@ -17,7 +17,7 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 		$zerif_devenir_mecene_entreprise_text 		= get_theme_mod('zerif_devenir_mecene_entreprise_text',__('Entreprise','zerif-lite'));
 		$zerif_devenir_mecene_particulier_text		= get_theme_mod('zerif_devenir_mecene_particulier_text',__('Particulier','zerif-lite'));
 		$zerif_devenir_mecene_paypal_id 			= get_theme_mod('zerif_devenir_mecene_paypal_id',__('mecenesdunumerique@gmail.com','zerif-lite'));
-		$zerif_devenir_mecene_paypal_boutton_text	= get_theme_mod('zerif_devenir_mecene_paypal_boutton_text',__('Donner avec Paypal','zerif-lite'));
+		$zerif_devenir_mecene_paypal_boutton_text	= get_theme_mod('zerif_devenir_mecene_paypal_boutton_text',__('Paypal','zerif-lite'));
 
 
 		// Ajustement automatique des colonnes selon le contenu responsive
@@ -35,14 +35,13 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 
 		?>
 
-		<?php //Titre ?>
+		<!--Titre -->
 
 		<div class="row">
 
 			<div class="section-header">
 
 				<?php
-
 				if( !empty($zerif_devenir_mecene_title) ):
 					echo '<h2 class="white-text">'. wp_kses_post( $zerif_devenir_mecene_title ) .'</h2>';
 				elseif ( isset( $wp_customize ) ):	
@@ -146,25 +145,51 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 			//Bouton entreprise
 
 			echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . '" data-scrollreveal="enter left after 0s over 2s">'; ?>
+			
+				<p>Je suis une entreprise</p>
 
 				<p>
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">Je fais un dons don</button>
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-entreprise-modal-lg">Je fais un don</button>
 				</p>
 
-		       <!-- Modal -->	
-		        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		       <!-- Modal entreprise -->	
+		        <div class="modal fade bs-entreprise-modal-lg" tabindex="-1" role="dialog" aria-labelledby="Entreprise">
 		        	<div class="modal-dialog">
 		            	<div class="modal-content">
 		              		<div class="modal-header">
 		                		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		                		<h4 class="modal-title rainbow" id="gridSystemModalLabel"><i>Formulaire de Contact</i></h4>
+		                		<h2 class="modal-title rainbow" id="gridSystemModalLabel"><i>Formulaire de Contact</i></h2>
 		              		</div>
 			              	<div class="modal-body">
 				                <form class="form-horizontal" role="form">
 									<div class="form-group">
+								    	<label class="control-label col-md-4" for="entreprise">Nom de l'entreprise:</label>
+								    	<div class="col-md-6">
+								    		<input type="text" class="form-control" id="entreprise" placeholder="Nom de l'entreprise" required>
+								    	</div>
+								  	</div>
+									<div class="form-group">
+								    	<label class="control-label col-md-4" for="siret">N° SIRET:</label>
+								    	<div class="col-md-6">
+								    		<input type="text" class="form-control" id="siret" placeholder="12345678912345" required>
+								    	</div>
+								  	</div>
+									<div class="form-group">
 								    	<label class="control-label col-md-4" for="nom">Nom:</label>
 								    	<div class="col-md-6">
 								    		<input type="text" class="form-control" id="nom" placeholder="votre nom" required>
+								    	</div>
+								  	</div>
+									<div class="form-group">
+								    	<label class="control-label col-md-4" for="prenom">Prénom:</label>
+								    	<div class="col-md-6">
+								    		<input type="text" class="form-control" id="prenom" placeholder="votre pr&eacute;nom" required>
+								    	</div>
+								  	</div>
+								  	<div class="form-group">
+								    	<label class="control-label col-md-4" for="adresse">Adresse:</label>
+								    	<div class="col-md-6">
+								    		<input type="text" class="form-control" id="adresse" placeholder="votre adresse" required>
 								    	</div>
 								  	</div>
 								  	<div class="form-group">
@@ -180,9 +205,9 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 								    	</div>
 								  	</div>
 								  	<div class="form-group">
-								    	<label class="control-label col-md-4" for="objet">Objet:</label>
+								    	<label class="control-label col-md-4" for="don">Montant du don:</label>
 								    	<div class="col-md-6">
-								    		<input type="text" class="form-control" id="objet" placeholder="" required>
+								    		<input type="tel" class="form-control" id="don" placeholder="300" required>
 								    	</div>
 								  	</div>
 								  	<div class="form-group">
@@ -210,8 +235,13 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 			//Bouton particulier
 
 			echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . '" data-scrollreveal="enter right after 0s over 2s">'; ?>
+			
+				<p>Je suis un particulier</p>
 				<div class="row">
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-6">
+						<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".bs-particulier-modal-lg">Je fais un don</button>
+					</div>
+					<div class="col-lg-6 col-md-6">
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 							<input type="hidden" name="cmd" value="_donations">
 							<input type="hidden" name="business" value="<?php echo $zerif_devenir_mecene_paypal_id; ?>">
@@ -223,13 +253,74 @@ My name is Merely Ducard but I speak for Ra's al	 Ghul... a man greatly feared b
 							<button type="submit" type="submit" class="btn btn-success btn-lg" name="submit" title="donner"><?php echo $zerif_devenir_mecene_paypal_boutton_text; ?></button>
 						</form>
 					</div>
-					<div class="col-lg-4 col-md-4">
-						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">chèque</button>
-					</div>
-					<div class="col-lg-4 col-md-4">
-						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bs-example-modal-lg">contact</button>
-					</div>
 				</div>
+				
+		       <!-- Modal particulier-->	
+		        <div class="modal fade bs-particulier-modal-lg" tabindex="-1" role="dialog" aria-labelledby="Particulier">
+		        	<div class="modal-dialog">
+		            	<div class="modal-content">
+		              		<div class="modal-header">
+		                		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		                		<h2 class="modal-title rainbow" id="gridSystemModalLabel"><i>Je suis un particulier</i></h2>
+		              		</div>
+			              	<div class="modal-body">
+			              		<h3>Donner par ch&egrave;que:</h3>
+			              		<p>Chèque a envoyer a l'adresse 4 résidence fernand chevallier, 28240 Loupe à l'ordre de Les Mécènes du Numérique.</p>
+		            			<hr>
+			              		<h3>Faire une promesse de don par e-mail:</h3>
+				                <form class="form-horizontal" role="form">
+									<div class="form-group">
+								    	<label class="control-label col-md-4" for="nom">Nom:</label>
+								    	<div class="col-md-6">
+								    		<input type="text" class="form-control" id="nom" placeholder="votre nom" required>
+								    	</div>
+								  	</div>
+									<div class="form-group">
+								    	<label class="control-label col-md-4" for="prenom">Prénom:</label>
+								    	<div class="col-md-6">
+								    		<input type="text" class="form-control" id="prenom" placeholder="votre pr&eacute;nom" required>
+								    	</div>
+								  	</div>
+								  	<div class="form-group">
+								    	<label class="control-label col-md-4" for="adresse">Adresse:</label>
+								    	<div class="col-md-6">
+								    		<input type="text" class="form-control" id="adresse" placeholder="votre adresse" required>
+								    	</div>
+								  	</div>
+								  	<div class="form-group">
+								    	<label class="control-label col-md-4" for="email">Adresse Email:</label>
+								    	<div class="col-md-6">
+								    		<input type="email" class="form-control" id="email" placeholder="jhondoe@example.com" required>
+								    	</div>
+								  	</div>
+								  	<div class="form-group">
+								    	<label class="control-label col-md-4" for="phone">T&eacute;l&eacute;phone:</label>
+								    	<div class="col-md-6">
+								    		<input type="tel" class="form-control" id="phone" placeholder="0450699887" required>
+								    	</div>
+								  	</div>
+								  	<div class="form-group">
+								    	<label class="control-label col-md-4" for="don">Montant du don:</label>
+								    	<div class="col-md-6">
+								    		<input type="tel" class="form-control" id="don" placeholder="300" required>
+								    	</div>
+								  	</div>
+								  	<div class="form-group">
+								    	<label class="control-label col-md-4" for="comment">Votre message:</label>
+								    	<div class="col-md-6">
+								    		<textarea class="form-control" rows="10" id="comment" placeholder="" required></textarea>
+								    	</div>
+								  	</div>
+								  	<div class="form-group">
+									  	<div class="col-md-6 col-md-push-4">
+									  		<button type="submit" class="btn btn-info btn-lg">Envoyer</button>
+									  	</div>
+									</div>
+								</form>
+							</div>
+		        		</div><!-- /.modal-content -->
+		    		</div><!-- /.modal-dialog -->
+				</div>  <!-- Fin Modal -->
 			</div>
 
 			<?php endif; ?>

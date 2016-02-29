@@ -36,19 +36,19 @@
 			$zerif_aboutus_text_3 			= get_theme_mod('zerif_aboutus_text_3','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.');
 			$colCount = 4;
 
-				if( !empty($zerif_aboutus_biglefttitle) ):
+			if( !empty($zerif_aboutus_biglefttitle) ):
 
-					echo '<div class="col-lg-12 col-md-12 column zerif-rtl-big-title">';
+				echo '<div class="col-lg-12 col-md-12 column zerif-rtl-big-title">';
 
-						echo '<div class="big-intro" data-scrollreveal="enter left after 0s over 1s">';
+					echo '<div class="big-intro" data-scrollreveal="enter left after 0s over 1s">';
 
-							echo wp_kses_post( $zerif_aboutus_biglefttitle );
-
-						echo '</div>';
+						echo wp_kses_post( $zerif_aboutus_biglefttitle );
 
 					echo '</div>';
 
-				endif;
+				echo '</div>';
+
+			endif;
 
 			if( !empty($zerif_aboutus_text) ):
 
@@ -73,6 +73,12 @@
 			if( !empty($zerif_aboutus_text_2) ):
 
 				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif_about_us_center ' . $text_and_skills . '" data-scrollreveal="enter bottom after 0s over 1s">';
+					
+					echo '<div class="icone text-center">';
+					
+						echo '<img src="http://www.ibangf.ovh/lesmecenes/img/equal.png" />';
+					
+					echo '</div>';
 
 					echo '<p class="text-big">';
 
