@@ -57,7 +57,7 @@
 			
 		}
 
-		var_dump($error);
+		//var_dump($error);
 		// SECTION TITLE
 
 		

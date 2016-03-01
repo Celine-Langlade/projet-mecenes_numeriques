@@ -131,7 +131,7 @@
 
 				echo '<div class="row">';
 
-					echo '<a href="http://www.wildcodeschool.fr">Mentions légales</a>';
+					echo '<a href="http://www.wildcodeschool.fr">Mentions légales</a><span class="mentions-legales" > | &copy; 2016 - Tous droits r&eacute;serv&eacute;s</span>';
 
 				echo '</div>';
 

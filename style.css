@@ -6470,6 +6470,11 @@ textarea {
 	font-size: 12px;
 }
 
+.mentions-legales span {
+	color: white;
+	font-size: 12px;
+}
+
 .mentions-legales a:hover {
     color: #428BCA;
     -webkit-transition: all 700ms;
