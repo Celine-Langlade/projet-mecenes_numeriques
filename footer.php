@@ -32,49 +32,6 @@
 		
 		global $wp_customize;
 		
-		
-		if( !empty($footer_class) ) {
-			
-			// /* COMPANY ADDRESS */
-			// if( !empty($zerif_address_icon) || !empty($zerif_address) ) { 
-			// 	echo '<div class="'.$footer_class.' company-details">';
-					
-			// 		if( !empty($zerif_address_icon) ) { 
-			// 			echo '<div class="icon-top red-text">';
-			// 				 echo '<img src="'.esc_url($zerif_address_icon).'" alt="" />';
-			// 			echo '</div>';
-			// 		}
-					
-			// 		if( !empty($zerif_address) ) {
-			// 			echo '<div class="zerif-footer-address">';
-			// 				echo wp_kses_post( $zerif_address );
-			// 			echo '</div>';
-			// 		} else if( isset( $wp_customize ) ) {
-			// 			echo '<div class="zerif-footer-address zerif_hidden_if_not_customizer"></div>';
-			// 		}
-					
-			// 	echo '</div>';
-			// }
-			
-			// /* COMPANY PHONE NUMBER */
-			// if( !empty($zerif_phone_icon) || !empty($zerif_phone) ) {
-			// 	echo '<div class="'.$footer_class.' company-details">';
-			// 		if( !empty($zerif_phone_icon) ) {
-			// 			echo '<div class="icon-top blue-text">';
-			// 				echo '<img src="'.esc_url($zerif_phone_icon).'" alt="" />';
-			// 			echo '</div>';
-			// 		}
-			// 		if( !empty($zerif_phone) ) {
-			// 			echo '<div class="zerif-footer-phone">';
-			// 				echo wp_kses_post( $zerif_phone );
-			// 			echo '</div>';	
-			// 		} else if( isset( $wp_customize ) ) {
-			// 			echo '<div class="zerif-footer-phone zerif_hidden_if_not_customizer"></div>';
-			// 		}		
-			// 	echo '</div>';
-			// }
-		}
-		
 		// open link in a new tab when checkbox "accessibility" is not ticked
 		$attribut_new_tab = (isset($zerif_accessibility) && ($zerif_accessibility != 1) ? ' target="_blank"' : '' );
 		
@@ -122,7 +79,7 @@
 					elseif( isset( $wp_customize ) ):
 						echo '<p id="zerif-copyright" class="zerif_hidden_if_not_customizer"></p>';
 					endif;
-					echo '<div class="zerif-copyright-box"><a href="http://www.wildcodeschool.fr" target="_blank"><img src="http://ibangf.ovh/lesmecenes/img/WCS-logo.png" alt="Wild Code School logo" /></a></div>';
+					echo '<div class="zerif-copyright-box"><a href="http://www.wildcodeschool.fr" target="_blank"><img src="./img/WCS-logo.png" alt="Wild Code School logo" /></a></div>';
 				echo '</div>';
 
 			echo '</div>';

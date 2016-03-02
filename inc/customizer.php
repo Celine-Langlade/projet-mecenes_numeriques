@@ -631,6 +631,95 @@ function zerif_customize_register( $wp_customize ) {
 			'section'  => 'zerif_devenir_mecene_paypal_section',
 			'priority'    => 2,
 		));
+
+	/*******************************************************/
+    /************	CONTACT US SECTION *********************/
+	/*******************************************************/
+	
+		$wp_customize->add_panel( 'panel_formulaire_entreprise', array(
+			'priority' => 106,
+			'capability' => 'edit_theme_options',
+			'title' => __( 'Formulaire pour entreprise', 'zerif-lite' )
+		));
+
+		$wp_customize->add_section( 'formulaire_entreprise_settings_section' , array(
+			'title'       => __( 'Options', 'zerif-lite' ),
+			'priority'    => 1,
+			'panel'       => 'panel_formulaire_entreprise'
+		));
+
+		/* contactus title */
+		$wp_customize->add_setting( 'zerif_devenir_mecene_formulaire_don_entreprise_title', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'default' => __('Get in touch','zerif-lite'),
+			'transport' => 'postMessage'
+		));
+		
+		$wp_customize->add_control( 'zerif_devenir_mecene_formulaire_don_entreprise_title', array(
+			'label'    => __( 'Titre pour le formulaire entreprise', 'zerif-lite' ),
+			'section'  => 'formulaire_entreprise_settings_section',
+			'priority'    => 1,
+		));
+		
+		/* contactus subtitle */
+		$wp_customize->add_setting( 'zerif_devenir_mecene_formulaire_don_entreprise_subtitle', array(
+			'sanitize_callback' => 'zerif_sanitize_text',
+			'transport' => 'postMessage'
+		));
+
+		
+		$wp_customize->add_control( 'zerif_devenir_mecene_formulaire_don_entreprise_subtitle', array(
+			'label'    => __( 'Contact us section subtitle', 'zerif-lite' ),
+		    'section'  => 'formulaire_entreprise_settings_section',
+			'priority'    => 2,
+		));
+		
+		/* contactus email */
+		$wp_customize->add_setting( 'zerif_contactus_email', array(
+			'sanitize_callback' => 'zerif_sanitize_text'
+		));
+				
+		$wp_customize->add_control( 'zerif_contactus_email', array(
+			'label'    => __( 'Address mail', 'zerif-lite' ),
+			'section'  => 'formulaire_entreprise_settings_section',
+			'priority'    => 3,
+		));
+		
+		/* recaptcha */
+		$wp_customize->add_setting( 'zerif_contactus_recaptcha_show', array(
+			'sanitize_callback' => 'zerif_sanitize_text'
+		));
+		
+		$wp_customize->add_control( 'zerif_contactus_recaptcha_show', array(
+			'type' => 'checkbox',
+			'label' => __('Hide reCaptcha?','zerif-lite'),
+			'section' => 'formulaire_entreprise_settings_section',
+			'priority'    => 4,
+		));
+		
+		/* site key */
+		$attribut_new_tab = (isset($zerif_accessibility) && ($zerif_accessibility != 1) ? ' target="_blank"' : '' );
+		$wp_customize->add_setting( 'zerif_contactus_sitekey', array(
+			'sanitize_callback' => 'zerif_sanitize_text'
+		));
+		
+		$wp_customize->add_control( 'zerif_contactus_sitekey', array(
+			'label'    => __( 'Site key', 'zerif-lite' ),
+			'description' => '<a'.$attribut_new_tab.' href="https://www.google.com/recaptcha/admin#list">'.__('Create an account here','zerif-lite').'</a> to get the Site key and the Secret key for the reCaptcha.',
+			'section'  => 'formulaire_entreprise_settings_section',
+			'priority'    => 5,
+		));
+		
+		/* secret key */
+		$wp_customize->add_setting( 'zerif_contactus_secretkey', array(
+			'sanitize_callback' => 'zerif_sanitize_text'
+		));
+		
+		$wp_customize->add_control( 'zerif_contactus_secretkey', array(
+			'label'    => __( 'Secret key', 'zerif-lite' ),
+			'section'  => 'formulaire_entreprise_settings_section',
+			'priority'    => 6,
+		));
 	
 }
 add_action( 'customize_register', 'zerif_customize_register' );

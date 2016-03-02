@@ -52,11 +52,11 @@
 
 			if( !empty($zerif_aboutus_text) ):
 
-				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif_about_us_center ' . $text_and_skills . '" data-scrollreveal="enter bottom after 0s over 1s">';
+				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif_about_us_center " data-scrollreveal="enter bottom after 0s over 1s">';
 					
 					echo '<div class="icone text-center">';
 					
-						echo '<img src="http://www.ibangf.ovh/lesmecenes/img/finances.png" />';
+						echo '<img src="./img/icon/icon-bourse.png" />';
 					
 					echo '</div>';
 
@@ -72,11 +72,11 @@
 
 			if( !empty($zerif_aboutus_text_2) ):
 
-				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif_about_us_center ' . $text_and_skills . '" data-scrollreveal="enter bottom after 0s over 1s">';
+				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif_about_us_center " data-scrollreveal="enter bottom after 0s over 1s">';
 					
 					echo '<div class="icone text-center">';
 					
-						echo '<img src="http://www.ibangf.ovh/lesmecenes/img/equal.png" />';
+						echo '<img src="./img/icon/icon-equality.png" />';
 					
 					echo '</div>';
 
@@ -92,11 +92,11 @@
 
 			if( !empty($zerif_aboutus_text_3) ):
 
-				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif_about_us_center ' . $text_and_skills . '" data-scrollreveal="enter bottom after 0s over 1s">';
+				echo '<div class="col-lg-' . $colCount . ' col-md-' . $colCount . ' column zerif_about_us_center " data-scrollreveal="enter bottom after 0s over 1s">';
 					
 					echo '<div class="icone text-center">';
 					
-						echo '<img src="http://www.ibangf.ovh/lesmecenes/img/education.png" />';
+						echo '<img src="./img/icon/icon-education.png" />';
 					
 					echo '</div>';
 
@@ -115,5 +115,8 @@
 	<!-- CLIENTS -->
 
 </div> <!-- / END CONTAINER -->
+
+
+
 
 </section> <!-- END ABOUT US SECTION -->
