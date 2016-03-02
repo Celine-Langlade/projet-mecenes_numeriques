@@ -128,7 +128,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 			if(trim($_POST['nom']) === ''):
 
-				$nameError = __('* Entrez votre nom.','zerif-lite');
+				$nomError = __('* Entrez votre nom.','zerif-lite');
 
 				$hasError = true;
 
@@ -142,7 +142,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 			if(trim($_POST['prenom']) === ''):
 
-				$nameError = __('* Entrez votre prénom.','zerif-lite');
+				$prenomError = __('* Entrez votre prénom.','zerif-lite');
 
 				$hasError = true;
 
@@ -174,7 +174,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 			
 			/* phone */
 
-			if(empty($_POST['phone']) or strlen($_POST['siret']) != 14 or !is_numeric($_POST['phone'])):
+			if(empty($_POST['phone']) or strlen($_POST['phone']) != 10 or !is_numeric($_POST['phone'])):
 
 				$messageError = __('* Un numéro de téléphone est composé de 10 chiffres.','zerif-lite');
 
@@ -188,7 +188,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 			
 			/* don */
 
-			if(trim($_POST['don']) === '' or !is_numeric($_POST['phone'])):
+			if(trim($_POST['don']) === '' or !is_numeric($_POST['don'])):
 
 				$donError = __('* Entrez le montant de votre promesse de don.','zerif-lite');
 
