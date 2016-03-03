@@ -16,8 +16,6 @@
 		$zerif_devenir_mecene_particulier_text		= get_theme_mod('zerif_devenir_mecene_particulier_text',__('Particulier','zerif-lite'));
 		$zerif_devenir_mecene_paypal_id 			= get_theme_mod('zerif_devenir_mecene_paypal_id',__('mecenesdunumerique@gmail.com','zerif-lite'));
 		$zerif_devenir_mecene_paypal_boutton_text	= get_theme_mod('zerif_devenir_mecene_paypal_boutton_text',__('Paypal','zerif-lite'));
-		
-		$zerif_devenir_mecene_formulaire_don_entreprise_title = get_theme_mod('zerif_devenir_mecene_formulaire_don_entreprise_title',__('Formulaire de don entreprise','zerif-lite'));
 		$zerif_devenir_mecene_formulaire_don_entreprise_subtitle = get_theme_mod('zerif_devenir_mecene_formulaire_don_entreprise_subtitle',__('Faitez un don','zerif-lite'));
 
 		// Ajustement automatique des colonnes selon le contenu responsive

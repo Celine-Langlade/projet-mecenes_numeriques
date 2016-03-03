@@ -39,180 +39,188 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 
 		if(isset($_POST['formEntreprise'])) :
-		
-			$entreprise = $_POST['entreprise'];
-			$siret = $_POST['siret'];
-			$nom = $_POST['nom'];
-			$prenom = $_POST['prenom'];
-			$adresse = $_POST['adresse'];
-			$email = $_POST['email'];
-			$phone = $_POST['phone'];
-			$don = $_POST['don'];
-			$comment = $_POST['comment'];
-			$subject = 'Don de: ' . $_POST['entreprise'] . '-' . $_POST['siret'];
-
 
 			/* recaptcha */
 			
-			$zerif_contactus_sitekey = get_theme_mod('zerif_contactus_sitekey');
+			// $zerif_contactus_sitekey = get_theme_mod('zerif_contactus_sitekey');
 
-			$zerif_contactus_secretkey = get_theme_mod('zerif_contactus_secretkey');
+			// $zerif_contactus_secretkey = get_theme_mod('zerif_contactus_secretkey');
 			
-			$zerif_contactus_recaptcha_show = get_theme_mod('zerif_contactus_recaptcha_show');
+			// $zerif_contactus_recaptcha_show = get_theme_mod('zerif_contactus_recaptcha_show');
 
-			if( isset($zerif_contactus_recaptcha_show) && $zerif_contactus_recaptcha_show != 1 && !empty($zerif_contactus_sitekey) && !empty($zerif_contactus_secretkey) ) :
 
-		        $captcha;
+			// if( isset($zerif_contactus_recaptcha_show) && $zerif_contactus_recaptcha_show != 1 && !empty($zerif_contactus_sitekey) && !empty($zerif_contactus_secretkey) ) :
 
-		        if( isset($_POST['g-recaptcha-response']) ){
+		 //        $captcha;
 
-		          $captcha=$_POST['g-recaptcha-response'];
+		 //        if( isset($_POST['g-recaptcha-response']) ){
 
-		        }
+		 //          $captcha=$_POST['g-recaptcha-response'];
 
-		        if( !$captcha ){
+		 //        }
 
-		          $hasError = true;    
+		 //        if( !$captcha ){
+
+		 //          $hasError = true;    
 		          
-		        }
+		 //        }
 
-		        $response = wp_remote_get( "https://www.google.com/recaptcha/api/siteverify?secret=".$zerif_contactus_secretkey."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR'] );
+		 //        $response = wp_remote_get( "https://www.google.com/recaptcha/api/siteverify?secret=".$zerif_contactus_secretkey."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR'] );
 
-		        if($response['body'].success==false) {
+		 //        if($response['body'].success==false) {
 
-		        	$hasError = true;
+		 //        	$hasError = true;
 
-		        }
+		 //        }
 
-	        endif;
+	  //       endif;
 
 			/* Nom entreprise */
 
-			if(trim($_POST['entreprise']) === ''):
+			// if(trim($_POST['entreprise']) === ''):
 
-				$entrepriseError = __('* Entrez le nom de votre entreprise.','zerif-lite');
+			// 	$entrepriseError = __('* Entrez le nom de votre entreprise.','zerif-lite');
 
-				$hasError = true;
+			// 	$hasError = true;
 
-			else:
+			// else:
 
-				$entreprise = trim($_POST['entreprise']);
+			// 	$entreprise = trim($_POST['entreprise']);
 
-			endif;
+			// endif;
 
 			/* Siret */
 
-			if(empty($_POST['siret']) && strlen($_POST['siret']) != 14):
+			// if(empty($_POST['siret']) && strlen((string)$_POST['siret']) != 14):
 
-				$siretError = __('* Un numéro de siret est composé de 14 chiffres.','zerif-lite');
+			//  	$siretError = __('* Un numéro de siret est composé de 14 chiffres.','zerif-lite');
 
-				$hasError = true;
+			//  	$hasError = true;
 
-			else:
+			// else:
 
-				if(!is_numeric($_POST['siret'])) {
+			//  	if(!is_numeric($_POST['siret'])) {
 
-					$siretError = __('* Le numéro de siret est uniquement composé de chiffre.','zerif-lite');
+			//  		$siretError = __('* Le numéro de siret est uniquement composé de chiffre.','zerif-lite');
 
-					$hasError = true;
+			//  		$hasError = true;
 
-				} else {
+			//  	} else {
 
-					$siret = trim($_POST['siret']);
+			//  		$siret = trim($_POST['siret']);
 
-				}
+			// 	}
 
-			endif;
+			// endif;
 
-			/* Nom */
+			// 		$siret = trim($_POST['siret']);
 
-			if(trim($_POST['nom']) === ''):
+			// /* Nom */
 
-				$nomError = __('* Entrez votre nom.','zerif-lite');
+			// if(trim($_POST['nom']) === ''):
 
-				$hasError = true;
+			// 	$nomError = __('* Entrez votre nom.','zerif-lite');
 
-			else:
+			// 	$hasError = true;
 
-				$name = trim($_POST['nom']);
+			// else:
 
-			endif;
+			// 	$nom = trim($_POST['nom']);
 
-			/* Prénom */
+			// endif;
 
-			if(trim($_POST['prenom']) === ''):
+			// /* Prénom */
 
-				$prenomError = __('* Entrez votre prénom.','zerif-lite');
+			// if(trim($_POST['prenom']) === ''):
 
-				$hasError = true;
+			// 	$prenomError = __('* Entrez votre prénom.','zerif-lite');
 
-			else:
+			// 	$hasError = true;
 
+			// else:
+
+			// 	$prenom = trim($_POST['prenom']);
+
+			// endif;
+
+			// 	$adresse = trim($_POST['adresse']);
+
+			// /* email */
+
+			// if(trim($_POST['email']) === ''):
+
+			// 	$emailError = __('* Entrez votre e-mail.','zerif-lite');
+
+			// 	$hasError = true;
+
+			// elseif (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['email']))) :
+
+			// 	$emailError = __('* Vous avez entré un e-mail invalide.','zerif-lite');
+
+			// 	$hasError = true;
+
+			// else:
+
+			// 	$email = trim($_POST['email']);
+
+			// endif;
+			
+			// /* phone */
+
+			// if(empty($_POST['phone']) or strlen((string)$_POST['phone']) != 10 or !is_numeric($_POST['phone'])):
+
+			// 	$messageError = __('* Un numéro de téléphone est composé de 10 chiffres.','zerif-lite');
+
+			// 	$hasError = true;
+
+			// else:
+
+
+			//  	$phone = trim($_POST['phone']);
+
+			// endif;
+			
+			// /* don */
+
+			// // if(trim($_POST['don']) === ''):
+
+			// // 	$donError = __('* Entrez le montant de votre promesse de don.','zerif-lite');
+
+			// // 	$hasError = true;
+
+			// // else:
+
+			// // 	$don = trim($_POST['don']);
+
+			// // endif;
+
+			//  	$don = trim($_POST['don']);
+			
+			// /* message */
+
+			// if(trim($_POST['comment']) === ''):
+
+			// 	$commentError = __('* Entrez votre message.','zerif-lite');
+
+			// 	$hasError = true;
+
+			// else:
+
+			// 	$comment = stripslashes(trim($_POST['comment']));
+
+			// endif;
+
+
+				$entreprise = trim($_POST['entreprise']);
+				$siret = trim($_POST['siret']);
+				$nom = trim($_POST['nom']);
 				$prenom = trim($_POST['prenom']);
-
-			endif;
-
-			/* email */
-
-			if(trim($_POST['email']) === ''):
-
-				$emailError = __('* Entrez votre e-mail.','zerif-lite');
-
-				$hasError = true;
-
-			elseif (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['email']))) :
-
-				$emailError = __('* Vous avez entré un e-mail invalide.','zerif-lite');
-
-				$hasError = true;
-
-			else:
-
-				$email = trim($_POST['email']);
-
-			endif;
-			
-			/* phone */
-
-			if(empty($_POST['phone']) or strlen($_POST['phone']) != 10 or !is_numeric($_POST['phone'])):
-
-				$messageError = __('* Un numéro de téléphone est composé de 10 chiffres.','zerif-lite');
-
-				$hasError = true;
-
-			else:
-
-				$message = trim($_POST['comment']);
-
-			endif;
-			
-			/* don */
-
-			if(trim($_POST['don']) === '' or !is_numeric($_POST['don'])):
-
-				$donError = __('* Entrez le montant de votre promesse de don.','zerif-lite');
-
-				$hasError = true;
-
-			else:
-
-				$don = trim($_POST['don']);
-
-			endif;
-			
-			/* message */
-
-			if(trim($_POST['comment']) === ''):
-
-				$commentError = __('* Entrez votre message.','zerif-lite');
-
-				$hasError = true;
-
-			else:
-
+				$adresse = trim($_POST['adresse']);
+				$email = trim($_POST['email']);			
+			 	$phone = trim($_POST['phone']);
+			 	$don = trim($_POST['don']);
 				$comment = stripslashes(trim($_POST['comment']));
-
-			endif;
+				$subject = 'Don de: ' . $_POST['entreprise'] . '-' . $_POST['siret'];
 
 			/* send the email */
 
@@ -232,9 +240,9 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 				if(isset($emailTo) && $emailTo != ""):
 
-					if( empty($subject) ):
-						$subject = 'From '.$nom;
-					endif;
+					// if( empty($subject) ):
+					// 	$subject = 'From '.$nom;
+					// endif;
 
 					$body = 'Nom entreprise : '.$entreprise."\r\n".
 							'Siret : '.$siret."\r\n".
@@ -357,6 +365,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 	endif;
 
 	
+	$zerif_devenir_mecene_formulaire_don_entreprise_title = get_theme_mod('zerif_devenir_mecene_formulaire_don_entreprise_title',__('Formulaire de don entreprise','zerif-lite'));
 	?>
 
    <!-- Modal entreprise -->	
@@ -365,10 +374,9 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
         	<div class="modal-content">
           		<div class="modal-header">
             		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            		<h2 class="modal-title rainbow" id="gridSystemModalLabel"><?php
-            			echo $zerif_devenir_mecene_formulaire_don_entreprise_title;
-            		 ?>
-            		 </h2>
+            		<h2 class="modal-title rainbow" id="gridSystemModalLabel">
+            			<?php echo $zerif_devenir_mecene_formulaire_don_entreprise_title; ?>
+            		</h2>
           		</div>
               	<div class="modal-body">
 	                <form role="form" method="POST" action="" class="form-horizontal">
@@ -429,7 +437,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 					  	</div>
 					  	<div class="form-group">
 						  	<div class="col-md-6 col-md-push-4">
-						  		<button type="submit" name="formEntreprise" class="btn btn-info btn-lg">Envoyer</button>
+						  		<input type="submit" name="formEntreprise" id="formEntreprise" class="btn btn-info btn-lg" value="Envoyer" />
 						  	</div>
 						</div>
 

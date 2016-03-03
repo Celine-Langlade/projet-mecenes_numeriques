@@ -651,7 +651,8 @@ function zerif_customize_register( $wp_customize ) {
 		/* contactus title */
 		$wp_customize->add_setting( 'zerif_devenir_mecene_formulaire_don_entreprise_title', array(
 			'sanitize_callback' => 'zerif_sanitize_text',
-			'default' => __('Get in touch','zerif-lite'),
+			'default' => __('Formulaire de don pour 
+				entreprise','zerif-lite'),
 			'transport' => 'postMessage'
 		));
 		
